@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SerializableDictionary - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+</head>
+
+<body>
+<h3>EasingUtility</h3>
+        <p>継承 : なし</p>
+        <p>
+            イージング関数を提供するクラス。
+            <a href="https://easings.net/ja">easings.net</a> で定義されている各種イージングカーブを、
+            <code>float</code> の正規化された時間 <code>x</code>(0~1)から算出する。
+        </p>
+
+        <h4 id="enum">列挙型</h4>
+        <p><strong>EaseType</strong></p>
+        <pre><code>Linear,
+InSine, OutSine, InOutSine,
+InQuad, OutQuad, InOutQuad,
+InCubic, OutCubic, InOutCubic,
+InQuart, OutQuart, InOutQuart,
+InQuint, OutQuint, InOutQuint,
+InExpo, OutExpo, InOutExpo,
+InCirc, OutCirc, InOutCirc,
+InBack, OutBack, InOutBack,
+InElastic, OutElastic, InOutElastic,
+InBounce, OutBounce, InOutBounce</code></pre>
+
+        <h4 id="static-functions">Static関数</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>メソッドの説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>float Evaluate(float x, EaseType type)</code></td><td>指定した <code>EaseType</code> に対応するイージング関数を実行する</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInSine(float x)</code></td><td>Sine系 Ease-In</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseOutSine(float x)</code></td><td>Sine系 Ease-Out</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInOutSine(float x)</code></td><td>Sine系 Ease-InOut</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInQuad(float x)</code></td><td>Quad系 Ease-In (x^2)</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseOutQuad(float x)</code></td><td>Quad系 Ease-Out</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInOutQuad(float x)</code></td><td>Quad系 Ease-InOut</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInCubic(float x)</code></td><td>Cubic系 Ease-In (x^3)</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseOutCubic(float x)</code></td><td>Cubic系 Ease-Out</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInOutCubic(float x)</code></td><td>Cubic系 Ease-InOut</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInQuart(float x)</code></td><td>Quart系 Ease-In (x^4)</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseOutQuart(float x)</code></td><td>Quart系 Ease-Out</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInOutQuart(float x)</code></td><td>Quart系 Ease-InOut</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInQuint(float x)</code></td><td>Quint系 Ease-In (x^5)</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseOutQuint(float x)</code></td><td>Quint系 Ease-Out</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInOutQuint(float x)</code></td><td>Quint系 Ease-InOut</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInExpo(float x)</code></td><td>指数関数的 Ease-In<br>x=0のとき0を返す特殊処理あり</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseOutExpo(float x)</code></td><td>指数関数的 Ease-Out<br>x=1のとき1を返す特殊処理あり</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInOutExpo(float x)</code></td><td>指数関数的 Ease-InOut<br>x=0,1で特殊処理あり</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInCirc(float x)</code></td><td>円弧を用いた Ease-In</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseOutCirc(float x)</code></td><td>円弧を用いた Ease-Out</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInOutCirc(float x)</code></td><td>円弧を用いた Ease-InOut</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInBack(float x)</code></td><td>一度オーバーシュートしてから戻る Ease-In</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseOutBack(float x)</code></td><td>一度オーバーシュートしてから戻る Ease-Out</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInOutBack(float x)</code></td><td>一度オーバーシュートしてから戻る Ease-InOut</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInElastic(float x)</code></td><td>バネのように弾む Ease-In<br>x=0,1で特殊処理あり</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseOutElastic(float x)</code></td><td>バネのように弾む Ease-Out<br>x=0,1で特殊処理あり</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInOutElastic(float x)</code></td><td>バネのように弾む Ease-InOut<br>x=0,1で特殊処理あり</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInBounce(float x)</code></td><td>バウンドする Ease-In<br>内部でEaseOutBounceを反転して利用</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseOutBounce(float x)</code></td><td>バウンドする Ease-Out</td><td>イージング適用後の値</td></tr>
+                <tr><td><code>float EaseInOutBounce(float x)</code></td><td>バウンドする Ease-InOut<br>内部でEaseOutBounceを利用</td><td>イージング適用後の値</td></tr>
+            </tbody>
+        </table>
+</body>

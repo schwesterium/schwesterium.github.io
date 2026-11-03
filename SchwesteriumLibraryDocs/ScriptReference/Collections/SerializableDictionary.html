@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SerializableDictionary - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+</head>
+
+<body>
+
+    <h3>SerializableDictionary&lt;Tkey, Tvalue&gt;</h3>
+    <p>Dictionaryの内容をInspector上で表示するクラス。</p>
+    <p class="note">ランタイムで編集すると中身が壊れるため注意。</p>
+
+    <h4 id="methods">メソッド</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>定義</th>
+                <th>メソッドの説明</th>
+                <th>戻り値の説明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>bool TryCreateDictionary()</code></td>
+                <td>Dictionaryがnullである場合は作成する</td>
+                <td>Dictionaryが作成できたかどうか</td>
+            </tr>
+            <tr>
+                <td><code>void AddElement(Tkey key, Tvalue value)</code></td>
+                <td>
+                    要素を追加する<br>
+                    <code>#define</code>ディレクティブ <code>UNITY_EDITOR</code> が有効な場合はInspectorの更新も行う
+                </td>
+                <td><code>void</code></td>
+            </tr>
+            <tr>
+                <td><code>void UpdateElementValue(Tkey key, Tvalue value)</code></td>
+                <td>keyの値をvalueに設定する</td>
+                <td><code>void</code></td>
+            </tr>
+            <tr>
+                <td><code>Tvalue GetElement(Tkey key)</code></td>
+                <td>keyの値を取得する</td>
+                <td>keyの値 <code>Tvalue</code></td>
+            </tr>
+            <tr>
+                <td><code>bool ContainsKey(Tkey key)</code></td>
+                <td>Dictionaryに指定したキーが含まれているかどうか</td>
+                <td>指定したキーが含まれているかどうか</td>
+            </tr>
+            <tr>
+                <td><code>void UpdateList()</code></td>
+                <td>
+                    Editor専用<br>
+                    Inspectorの更新を行う
+                </td>
+                <td><code>void</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
