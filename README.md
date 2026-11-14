@@ -88,6 +88,7 @@ MySite => https://schwesterium.github.io/
 <details> 
 
 <summary>定数</summary>
+
 ```html
 <h1 id="const-variables">定数</h1>
     <table>
@@ -114,6 +115,7 @@ MySite => https://schwesterium.github.io/
 <details> 
 
 <summary>変数</summary>
+
 ```html
 <h1 id="variables">変数</h1>
     <table>
@@ -132,6 +134,20 @@ MySite => https://schwesterium.github.io/
             </tr>
         </tbody>
     </table>
+```
+
+</details> 
+
+
+<details> 
+
+<summary>impl-note</summary>
+
+```html
+    <div class="impl-note">
+        <p>継承 : <code>HogeBase</code></p>
+        <p>実装インタフェース : <code>IDisposable</code></p>
+    </div>
 ```
 
 </details> 
