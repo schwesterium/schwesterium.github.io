@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SerializableDictionary - Schwesterium Library スクリプトリファレンス</title>
+    <title>MathUtility - Schwesterium Library スクリプトリファレンス</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="index.css"> -->
 </head>
 
 <body>
-    <h3>MathUtility</h3>
+    <h1>MathUtility</h1>
     <p>数学的計算のためのヘルパー。</p>
 
-    <h4 id="variables">変数</h4>
+    <h1 id="const-variables">定数</h1>
     <table>
         <thead>
             <tr>
@@ -110,12 +110,12 @@
         </tbody>
     </table>
 
-    <h4 id="static-functions">Static関数</h4>
+    <h1 id="static-functions">Static関数</h1>
     <table>
         <thead>
             <tr>
                 <th>定義</th>
-                <th>メソッドの説明</th>
+                <th>関数の説明</th>
                 <th>戻り値の説明</th>
             </tr>
         </thead>
@@ -158,7 +158,7 @@
             <tr>
                 <td><code>(Vector3, Quaternion) SteerTowards(Vector3 currentPosition, Quaternion currentRotation, Vector3 target, float dt, float moveSpeed, float trunSpeed)</code></td>
                 <td>目標位置の方向へ現在の向きを徐々に回転させつつ、回転後のforward方向へ前進する<br>currentPosition: 現在のワールド位置, currentRotation: 現在のワールド回転, target: 目標位置, dt: deltaTime, moveSpeed: 移動速度, trunSpeed: 回転速度</br></td>
-                <td>(位置、回転)</td>
+                <td>更新後の (位置、回転)</td>
             </tr>
         </tbody>
     </table>
