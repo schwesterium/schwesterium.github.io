@@ -1,32 +1,23 @@
-﻿:root {
-  --bg: #ffffff;
-  --fg: #1f2328;
-  --muted: #656d76;
-  --border: #d0d7de;
-  --code-bg: #f6f8fa;
-  --accent: #0969da;
-  --note: #0969da;
-  --note-bg: #ddf4ff;
-  --warn: #9a6700;
-  --warn-bg: #fff8c5;
+﻿/* ===== Theme ===== */
+:root {
   color-scheme: light dark;
+
+  /*                  light,    dark */
+  --bg:       light-dark(#ffffff, #0d1117);
+  --fg:       light-dark(#1f2328, #e6edf3);
+  --muted:    light-dark(#656d76, #8d96a0);
+  --border:   light-dark(#d0d7de, #30363d);
+  --code-bg:  light-dark(#f6f8fa, #161b22);
+  --accent:   light-dark(#0969da, #4493f8);
+  --note:     var(--accent);
+  --note-bg:  light-dark(#ddf4ff, #121d2f);
+  --warn:     light-dark(#9a6700, #d29922);
+  --warn-bg:  light-dark(#fff8c5, #272115);
+
+  --radius: 6px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0d1117;
-    --fg: #e6edf3;
-    --muted: #8d96a0;
-    --border: #30363d;
-    --code-bg: #161b22;
-    --accent: #4493f8;
-    --note: #4493f8;
-    --note-bg: #121d2f;
-    --warn: #d29922;
-    --warn-bg: #272115;
-  }
-}
-
+/* ===== Base ===== */
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
@@ -46,7 +37,7 @@ h3 { font-size: 1.1rem; }
 
 a { color: var(--accent); }
 
-/* code */
+/* ===== Code ===== */
 code, pre {
   font-family: ui-monospace, SFMono-Regular, Consolas, "Courier New", monospace;
   font-size: .9em;
@@ -61,17 +52,20 @@ pre {
   overflow-x: auto;
   background: var(--code-bg);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: var(--radius);
 }
 pre code { padding: 0; background: none; }
 
-/* table */
+/* ===== Table ===== */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0;
-  display: block;          /* 狭い画面で横スクロール */
-  overflow-x: auto;
+}
+@media (max-width: 640px) {
+  table {
+    display: block;          /* 狭い画面では横スクロール */
+    overflow-x: auto;
+  }
 }
 th, td {
   padding: .6rem .9rem;
@@ -81,52 +75,41 @@ th, td {
 }
 thead th { background: var(--code-bg); white-space: nowrap; }
 tbody tr:nth-child(even) { background: color-mix(in srgb, var(--code-bg) 50%, transparent); }
+td { line-height: 1.8; }     /* <br> 区切りの複数行セル（引数列など）を読みやすく */
 
-/* alerts */
+/* ===== Components ===== */
+/* ブロック要素の上下余白を共通化 */
+table, .impl-note, .alerts-note, .alerts-warning { margin: 1rem 0; }
+
+/* alerts: 種類ごとに色の変数だけ差し替える */
+.alerts-note    { --alert: var(--note); --alert-bg: var(--note-bg); }
+.alerts-warning { --alert: var(--warn); --alert-bg: var(--warn-bg); }
 .alerts-note, .alerts-warning {
-  margin: 1rem 0;
   padding: .8rem 1rem;
-  border-left: 4px solid;
-  border-radius: 0 6px 6px 0;
+  border-left: 4px solid var(--alert);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--alert-bg);
 }
-.alerts-note    { color: var(--fg); border-color: var(--note); background: var(--note-bg); }
-.alerts-warning { color: var(--fg); border-color: var(--warn); background: var(--warn-bg); }
-.alerts-note > :first-child,
-.alerts-warning > :first-child { margin-top: 0; }
-.alerts-note > :last-child,
-.alerts-warning > :last-child { margin-bottom: 0; }
 
 /* impl-note（継承・実装インタフェース表示） */
 .impl-note {
-  margin: 1rem 0;
   padding: .6rem 1rem;
   color: var(--muted);
   border: 1px dashed var(--border);
-  border-radius: 6px;
+  border-radius: var(--radius);
 }
 .impl-note p { margin: .2rem 0; }
 
-/* セクション単位のまとまり */
-body > div[id],
-main > div[id] {
+/* script-doc（クラスの概要。ページ先頭） */
+.script-doc { margin: 0 0 2rem; }
+
+/* ===== Sections ===== */
+/* <div id="constructor"> など、セクション単位のまとまり */
+div[id] {
   margin-bottom: 3rem;
-  scroll-margin-top: 1rem;   /* #constructor へのジャンプ時に上端ぴったりにならないように */
+  scroll-margin-top: 1rem;   /* #public-functions 等へジャンプしたとき上端ぴったりにならないように */
 }
 
-/* セクション先頭の h1 は上マージンを消す */
-div[id] > h1:first-child {
-  margin-top: 0;
-}
-
-/* 定義列（1列目）は折り返さず、残りを2列目に回す */
-tbody td:first-child {
-  white-space: nowrap;
-}
-tbody td:first-child code {
-  white-space: pre;
-}
-
-/* 引数列など、<br> 区切りの複数行セルを読みやすく */
-td {
-  line-height: 1.8;
-}
+/* コンテナ内の先頭・末尾要素の余白を詰める */
+:is(div[id], .script-doc, .alerts-note, .alerts-warning) > :first-child { margin-top: 0; }
+:is(.script-doc, .alerts-note, .alerts-warning) > :last-child { margin-bottom: 0; }
