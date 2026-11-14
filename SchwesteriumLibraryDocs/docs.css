@@ -105,3 +105,28 @@ tbody tr:nth-child(even) { background: color-mix(in srgb, var(--code-bg) 50%, tr
   border-radius: 6px;
 }
 .impl-note p { margin: .2rem 0; }
+
+/* セクション単位のまとまり */
+body > div[id],
+main > div[id] {
+  margin-bottom: 3rem;
+  scroll-margin-top: 1rem;   /* #constructor へのジャンプ時に上端ぴったりにならないように */
+}
+
+/* セクション先頭の h1 は上マージンを消す */
+div[id] > h1:first-child {
+  margin-top: 0;
+}
+
+/* 定義列（1列目）は折り返さず、残りを2列目に回す */
+tbody td:first-child {
+  white-space: nowrap;
+}
+tbody td:first-child code {
+  white-space: pre;
+}
+
+/* 引数列など、<br> 区切りの複数行セルを読みやすく */
+td {
+  line-height: 1.8;
+}

@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LocalMultiplayManager - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>LocalMultiplayManager</h1>
+        <p>
+            コントローラー接続・プレイヤー参加管理を行う。
+        </p>
+    </div>
+
+    
+    <div class="impl-note">
+        <p>実装インタフェース : <code>IDisposable</code></p>
+    </div>
+
+    <div id="constructor">
+        <h1>コンストラクタ</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>引数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>LocalMultiplayManager(int maxPlayers, GameObject[] playerObjs, <br>bool useKeyboard, bool initResister)</code></td>
+                    <td>
+                        maxPlayers: 最大人数<br>
+                        playerObjs: IInputHandlerOwnerを実装したクラスを持つGameObjectの配列<br>
+                        useKeyboard: キーボード入力を有効にする<br>
+                        initResister: <code>Init()</code> 実行時、接続済みデバイスを登録する
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="variables">
+        <h1>変数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>KEYBOARD</code></td>
+                    <td><code>const string</code></td>
+                    <td>Bindingに使うgroupsの名前</td>
+                </tr>
+                <tr>
+                    <td><code>GAMEPAD</code></td>
+                    <td><code>const string</code></td>
+                    <td>Bindingに使うgroupsの名前</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="public-functions">
+        <h1>Public関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>void Init()</code></td>
+                    <td>初期化処理</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void StartRegisterDevice()</code></td>
+                    <td>デバイスの登録を開始する</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void EndRegisterDevice()</code></td>
+                    <td>デバイスの登録を終了する</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void RegisterAllDevices()</code></td>
+                    <td>接続済みのデバイスをすべて登録する</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void SetActiveUnassignedPlayer()</code></td>
+                    <td>未割当のプレイヤーオブジェクトを非表示にする</td>
+                    <td><code>void</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>

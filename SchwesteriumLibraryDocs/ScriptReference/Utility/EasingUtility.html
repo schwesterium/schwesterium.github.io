@@ -9,28 +9,36 @@
 </head>
 
 <body>
+    <div class="script-doc">
         <h1>EasingUtility</h1>
         <p>
             イージング関数を提供するクラス。
             <a href="https://easings.net/ja">easings.net</a> で定義されている各種イージングカーブを、
             <code>float</code> の正規化された時間 <code>x</code>(0~1)から算出する。
         </p>
+    </div>
 
-        <h1 id="enum">列挙型</h1>
+
+    <div id="enum">
+        <h1>列挙型</h1>
         <p><strong>EaseType</strong></p>
-        <pre><code>Linear,
-InSine, OutSine, InOutSine,
-InQuad, OutQuad, InOutQuad,
-InCubic, OutCubic, InOutCubic,
-InQuart, OutQuart, InOutQuart,
-InQuint, OutQuint, InOutQuint,
-InExpo, OutExpo, InOutExpo,
-InCirc, OutCirc, InOutCirc,
-InBack, OutBack, InOutBack,
-InElastic, OutElastic, InOutElastic,
-InBounce, OutBounce, InOutBounce</code></pre>
+        <pre><code>
+            Linear,
+            InSine, OutSine, InOutSine,
+            InQuad, OutQuad, InOutQuad,
+            InCubic, OutCubic, InOutCubic,
+            InQuart, OutQuart, InOutQuart,
+            InQuint, OutQuint, InOutQuint,
+            InExpo, OutExpo, InOutExpo,
+            InCirc, OutCirc, InOutCirc,
+            InBack, OutBack, InOutBack,
+            InElastic, OutElastic, InOutElastic,
+            InBounce, OutBounce, InOutBounce
+        </code></pre>
+    </div>        
 
-        <h1 id="static-functions">Static関数</h1>
+    <div id="static-functions">
+        <h1>Static関数</h1>
         <table>
             <thead>
                 <tr>
@@ -73,4 +81,5 @@ InBounce, OutBounce, InOutBounce</code></pre>
                 <tr><td><code>float EaseInOutBounce(float x)</code></td><td>バウンドする Ease-InOut<br>内部でEaseOutBounceを利用</td><td>イージング適用後の値</td></tr>
             </tbody>
         </table>
+    </div>
 </body>

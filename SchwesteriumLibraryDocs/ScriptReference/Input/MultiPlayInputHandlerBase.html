@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MultiPlayInputHandlerBase - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>LocalMultiplayManager</h1>
+        <p>
+            ローカルマルチ用 入力ハンドラ基底クラス
+        </p>
+    </div>
+    
+    <div class="impl-note">
+        <p>実装インタフェース : <code>IDisposable</code></p>
+    </div>
+
+    <div id="variables">
+        <h1>変数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>PlayerId</code></td>
+                    <td><code>int</code></td>
+                    <td>プレイヤーid</td>
+                </tr>
+                <tr>
+                    <td><code>ParentDevice</code></td>
+                    <td><code>InputDevice</code></td>
+                    <td>割り当てられたデバイス</td>
+                </tr>
+                <tr>
+                    <td><code>IsJoined</code></td>
+                    <td><code>bool</code></td>
+                    <td>参加済みかどうか</td>
+                </tr>
+                <tr>
+                    <td><code>IsActive</code></td>
+                    <td><code>bool</code></td>
+                    <td>有効かどうか</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="public-functions">
+        <h1>Public関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>void Join(InputDevice device, int playerId)</code></td>
+                    <td>
+                        ハンドラーにデバイスを割り当て、セットアップを行う<br>
+                        device: 割り当てるデバイス, playerId: プレイヤーid
+                    </td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void Leave(InputDevice device)</code></td>
+                    <td>ハンドラーからデバイスを解除し、リセットを行う</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void Enable()</code></td>
+                    <td>有効化する</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void Disable()</code></td>
+                    <td>無効化する</td>
+                    <td><code>void</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="protected-functions">
+        <h1>Protected関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>abstract void SetUpAction()</code></td>
+                    <td>InputActionを設定し、InputActionMapへ登録するための関数</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>abstract void ReleaseAction()</code></td>
+                    <td><code>SetUpAction()</code> で登録したコールバックの解除などを行うための関数</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void ReleaseInternal()</code></td>
+                    <td>入力まわりのリソースを解放する共通の内部処理</td>
+                    <td><code>void</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>

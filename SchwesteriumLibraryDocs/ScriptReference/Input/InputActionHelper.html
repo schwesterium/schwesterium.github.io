@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>InputActionHelper - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>InputActionHelper</h1>
+        <p>
+            <code>InputAction</code> の生成を行う。
+        </p>
+    </div>
+
+    <div id="const-variables">
+        <h1>定数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>KEYBOARD</code></td>
+                    <td><code>const string</code></td>
+                    <td>Bindingに使うgroupsの名前</td>
+                </tr>
+                <tr>
+                    <td><code>GAMEPAD</code></td>
+                    <td><code>const string</code></td>
+                    <td>Bindingに使うgroupsの名前</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="static-functions">
+        <h1>Static関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>InputAction AddMoveAction(InputActionMap map, string actionName = "Move")</code></td>
+                    <td>移動Actionの生成を行う。WASD、Lスティックによる操作が可能</td>
+                    <td><code>InputAction</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>

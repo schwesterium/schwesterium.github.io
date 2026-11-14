@@ -12,154 +12,160 @@
     <h1>MathUtility</h1>
     <p>数学的計算のためのヘルパー。</p>
 
-    <h1 id="const-variables">定数</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>名前</th>
-                <th>型</th>
-                <th>説明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>PI2</code></td>
-                <td><code>const float</code></td>
-                <td>円周率の2倍（2π ≒ 6.28318530）</td>
-            </tr>
-            <tr>
-                <td><code>HALF_PI</code></td>
-                <td><code>const float</code></td>
-                <td>円周率の半分（π/2 ≒ 1.57079632）</td>
-            </tr>
-            <tr>
-                <td><code>INV_PI</code></td>
-                <td><code>const float</code></td>
-                <td>円周率の逆数（1/π ≒ 0.31830989）</td>
-            </tr>
-            <tr>
-                <td><code>INV_SQRT_PI</code></td>
-                <td><code>const float</code></td>
-                <td>πの平方根の逆数（1/√π ≒ 0.56418958）</td>
-            </tr>
-            <tr>
-                <td><code>INV_SQRT_PI2</code></td>
-                <td><code>const float</code></td>
-                <td>2πの平方根の逆数（1/√2π ≒ 0.39894228）</td>
-            </tr>
-            <tr>
-                <td><code>INV2</code></td>
-                <td><code>const float</code></td>
-                <td>2の逆数（1/2 = 0.5）</td>
-            </tr>
-            <tr>
-                <td><code>INV3</code></td>
-                <td><code>const float</code></td>
-                <td>3の逆数（1/3 ≒ 0.33333333）</td>
-            </tr>
-            <tr>
-                <td><code>INV4</code></td>
-                <td><code>const float</code></td>
-                <td>4の逆数（1/4 = 0.25）</td>
-            </tr>
-            <tr>
-                <td><code>INV5</code></td>
-                <td><code>const float</code></td>
-                <td>5の逆数（1/5 = 0.2）</td>
-            </tr>
-            <tr>
-                <td><code>INV6</code></td>
-                <td><code>const float</code></td>
-                <td>6の逆数（1/6 ≒ 0.16666667）</td>
-            </tr>
-            <tr>
-                <td><code>INV7</code></td>
-                <td><code>const float</code></td>
-                <td>7の逆数（1/7 ≒ 0.14285714）</td>
-            </tr>
-            <tr>
-                <td><code>INV8</code></td>
-                <td><code>const float</code></td>
-                <td>8の逆数（1/8 = 0.125）</td>
-            </tr>
-            <tr>
-                <td><code>INV9</code></td>
-                <td><code>const float</code></td>
-                <td>9の逆数（1/9 ≒ 0.11111111）</td>
-            </tr>
-            <tr>
-                <td><code>INV10</code></td>
-                <td><code>const float</code></td>
-                <td>9の逆数（1/10 = 0.1）</td>
-            </tr>
-            <tr>
-                <td><code>INV_SQRT2</code></td>
-                <td><code>const float</code></td>
-                <td>2の平方根の逆数（1/√2 ≒ 0.70710678）</td>
-            </tr>
-            <tr>
-                <td><code>INV_SQRT3</code></td>
-                <td><code>const float</code></td>
-                <td>3の平方根の逆数（1/√3 ≒ 0.57735027）</td>
-            </tr>
-            <tr>
-                <td><code>INV_SQRT5</code></td>
-                <td><code>const float</code></td>
-                <td>5の平方根の逆数（1/√5 ≒ 0.44721360）</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <h1 id="static-functions">Static関数</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>定義</th>
-                <th>関数の説明</th>
-                <th>戻り値の説明</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>bool IsEven(int value)</code></td>
-                <td>与えられた整数が偶数かどうかを判定する</td>
-                <td>偶数であればtrue、奇数であればfalse</td>
-            </tr>
-            <tr>
-                <td><code>float SineWave(float a, float f, float t, float phi)</code></td>
-                <td>正弦波の値を計算する<br>a: 振幅, f: 周波数, t: 時間, phi: 初期位相</td>
-                <td>時刻tにおける正弦波の値</td>
-            </tr>
-            <tr>
-                <td><code>float SquareWave(float a, float f, float t, float phi)</code></td>
-                <td>矩形波の値を計算する<br>a: 振幅, f: 周波数, t: 時間, phi: 初期位相</td>
-                <td>時刻tにおける矩形波の値（±a）</td>
-            </tr>
-            <tr>
-                <td><code>float PyramidalWave(float a, float f, float t, float phi)</code></td>
-                <td>三角波の値を計算する<br>a: 振幅, f: 周波数, t: 時間, phi: 初期位相</td>
-                <td>時刻tにおける三角波の値</td>
-            </tr>
-            <tr>
-                <td><code>float SawtoothWave(float a, float f, float t)</code></td>
-                <td>のこぎり波の値を計算する<br>a: 振幅, f: 周波数, t: 時間</td>
-                <td>時刻tにおけるのこぎり波の値</td>
-            </tr>
-            <tr>
-                <td><code>Vector3 NormalizedDirection(in Vector3 from, in Vector3 to)</code></td>
-                <td>始点から終点へ向かう正規化された方向ベクトルを求める<br>from: 始点, to: 終点</br></td>
-                <td>正規化ベクトル</td>
-            </tr>
-            <tr>
-                <td><code>float SqrDistance(Vector3 a, Vector3 b)</code></td>
-                <td>2点間の距離の2乗を計算する<br>a: 始点, b: 終点</br></td>
-                <td>2点間の距離の2乗</td>
-            </tr>
-            <tr>
-                <td><code>(Vector3, Quaternion) SteerTowards(Vector3 currentPosition, Quaternion currentRotation, Vector3 target, float dt, float moveSpeed, float trunSpeed)</code></td>
-                <td>目標位置の方向へ現在の向きを徐々に回転させつつ、回転後のforward方向へ前進する<br>currentPosition: 現在のワールド位置, currentRotation: 現在のワールド回転, target: 目標位置, dt: deltaTime, moveSpeed: 移動速度, trunSpeed: 回転速度</br></td>
-                <td>更新後の (位置、回転)</td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="const-variables">
+        <h1>定数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>PI2</code></td>
+                    <td><code>const float</code></td>
+                    <td>円周率の2倍（2π ≒ 6.28318530）</td>
+                </tr>
+                <tr>
+                    <td><code>HALF_PI</code></td>
+                    <td><code>const float</code></td>
+                    <td>円周率の半分（π/2 ≒ 1.57079632）</td>
+                </tr>
+                <tr>
+                    <td><code>INV_PI</code></td>
+                    <td><code>const float</code></td>
+                    <td>円周率の逆数（1/π ≒ 0.31830989）</td>
+                </tr>
+                <tr>
+                    <td><code>INV_SQRT_PI</code></td>
+                    <td><code>const float</code></td>
+                    <td>πの平方根の逆数（1/√π ≒ 0.56418958）</td>
+                </tr>
+                <tr>
+                    <td><code>INV_SQRT_PI2</code></td>
+                    <td><code>const float</code></td>
+                    <td>2πの平方根の逆数（1/√2π ≒ 0.39894228）</td>
+                </tr>
+                <tr>
+                    <td><code>INV2</code></td>
+                    <td><code>const float</code></td>
+                    <td>2の逆数（1/2 = 0.5）</td>
+                </tr>
+                <tr>
+                    <td><code>INV3</code></td>
+                    <td><code>const float</code></td>
+                    <td>3の逆数（1/3 ≒ 0.33333333）</td>
+                </tr>
+                <tr>
+                    <td><code>INV4</code></td>
+                    <td><code>const float</code></td>
+                    <td>4の逆数（1/4 = 0.25）</td>
+                </tr>
+                <tr>
+                    <td><code>INV5</code></td>
+                    <td><code>const float</code></td>
+                    <td>5の逆数（1/5 = 0.2）</td>
+                </tr>
+                <tr>
+                    <td><code>INV6</code></td>
+                    <td><code>const float</code></td>
+                    <td>6の逆数（1/6 ≒ 0.16666667）</td>
+                </tr>
+                <tr>
+                    <td><code>INV7</code></td>
+                    <td><code>const float</code></td>
+                    <td>7の逆数（1/7 ≒ 0.14285714）</td>
+                </tr>
+                <tr>
+                    <td><code>INV8</code></td>
+                    <td><code>const float</code></td>
+                    <td>8の逆数（1/8 = 0.125）</td>
+                </tr>
+                <tr>
+                    <td><code>INV9</code></td>
+                    <td><code>const float</code></td>
+                    <td>9の逆数（1/9 ≒ 0.11111111）</td>
+                </tr>
+                <tr>
+                    <td><code>INV10</code></td>
+                    <td><code>const float</code></td>
+                    <td>9の逆数（1/10 = 0.1）</td>
+                </tr>
+                <tr>
+                    <td><code>INV_SQRT2</code></td>
+                    <td><code>const float</code></td>
+                    <td>2の平方根の逆数（1/√2 ≒ 0.70710678）</td>
+                </tr>
+                <tr>
+                    <td><code>INV_SQRT3</code></td>
+                    <td><code>const float</code></td>
+                    <td>3の平方根の逆数（1/√3 ≒ 0.57735027）</td>
+                </tr>
+                <tr>
+                    <td><code>INV_SQRT5</code></td>
+                    <td><code>const float</code></td>
+                    <td>5の平方根の逆数（1/√5 ≒ 0.44721360）</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="static-functions">
+        <h1>Static関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>bool IsEven(int value)</code></td>
+                    <td>与えられた整数が偶数かどうかを判定する</td>
+                    <td>偶数であればtrue、奇数であればfalse</td>
+                </tr>
+                <tr>
+                    <td><code>float SineWave(float a, float f, float t, float phi)</code></td>
+                    <td>正弦波の値を計算する<br>a: 振幅, f: 周波数, t: 時間, phi: 初期位相</td>
+                    <td>時刻tにおける正弦波の値</td>
+                </tr>
+                <tr>
+                    <td><code>float SquareWave(float a, float f, float t, float phi)</code></td>
+                    <td>矩形波の値を計算する<br>a: 振幅, f: 周波数, t: 時間, phi: 初期位相</td>
+                    <td>時刻tにおける矩形波の値（±a）</td>
+                </tr>
+                <tr>
+                    <td><code>float PyramidalWave(float a, float f, float t, float phi)</code></td>
+                    <td>三角波の値を計算する<br>a: 振幅, f: 周波数, t: 時間, phi: 初期位相</td>
+                    <td>時刻tにおける三角波の値</td>
+                </tr>
+                <tr>
+                    <td><code>float SawtoothWave(float a, float f, float t)</code></td>
+                    <td>のこぎり波の値を計算する<br>a: 振幅, f: 周波数, t: 時間</td>
+                    <td>時刻tにおけるのこぎり波の値</td>
+                </tr>
+                <tr>
+                    <td><code>Vector3 NormalizedDirection(in Vector3 from, in Vector3 to)</code></td>
+                    <td>始点から終点へ向かう正規化された方向ベクトルを求める<br>from: 始点, to: 終点</br></td>
+                    <td>正規化ベクトル</td>
+                </tr>
+                <tr>
+                    <td><code>float SqrDistance(Vector3 a, Vector3 b)</code></td>
+                    <td>2点間の距離の2乗を計算する<br>a: 始点, b: 終点</br></td>
+                    <td>2点間の距離の2乗</td>
+                </tr>
+                <tr>
+                    <td><code>(Vector3, Quaternion) SteerTowards(Vector3 currentPosition, Quaternion currentRotation, Vector3 target, float dt, float moveSpeed, float trunSpeed)</code></td>
+                    <td>目標位置の方向へ現在の向きを徐々に回転させつつ、回転後のforward方向へ前進する<br>currentPosition: 現在のワールド位置, currentRotation: 現在のワールド回転, target: 目標位置, dt: deltaTime, moveSpeed: 移動速度, trunSpeed: 回転速度</br></td>
+                    <td>更新後の (位置、回転)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </body>
