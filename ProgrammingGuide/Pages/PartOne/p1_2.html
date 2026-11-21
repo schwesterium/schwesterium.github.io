@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>変数と型</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<header>
+    <a class="logo" href="/ProgrammingGuide/home.html">Programming Guide</a>
+</header>
+
+<body>
+    <div class="content">
+        <h1>変数とは</h1>
+        <p>
+            データを記憶しておくための領域に名前を付けたもので、必要に応じてデータの出し入れができる。
+        </p>
+        <p>
+            ゲームでの得点について、変数を使用して考えてみる。<br>
+            "score"という得点の変数があったとする。当然、ゲームの最初は持っている得点は0であるから、"score"は0が入っている。<br>
+            ここで、10点得るコインを取ると、"score"は+10され、"score"は10になる。<br>
+            さらに、コインを3枚取ると、"score"は+30され、"score"は40になる。
+            ゲームクリア時、"score"を利用してリザルト画面に得点を表示する。
+        </p>
+
+        <p>
+            さて、上記の例を実際にコードにして入力しよう。
+            <details>
+                <summary>ソースコードを見る (Code1_1)</summary>
+                <pre><code>
+//変数の宣言 データを記憶しておくための領域（箱）に名前をつける
+int score;          //得点を保持
+
+//変数に値を代入する
+score = 0;          //ゲーム開始時は0点
+
+score = score + 10; //コインを取った！ 今の得点に、+10した値を得点として保存する
+score = score + 30;
+
+Console.WriteLine(score); //得点を表示する
+                </code></pre>
+            </details>
+        </p>
+
+        <p>
+            実行すると、画面に変数の値が表示される。実行結果は以下の通り。
+            <details>
+                <summary>実行結果 (Code1_1)</summary>
+                <pre><code>
+40
+                </code></pre>
+            </details>
+        </p>
+        
+        <p>
+            変数は、箱として例えられることが多い。<br>
+            <strong>「変数名」</strong>は箱の名前、「<strong>型名</strong>」は箱に入れるものの種類である。
+            今回書いたコードの場合、<code>score</code>が変数名、その左にある<code>int</code>が型名となる。
+        </p>
+
+        <h1>型とは</h1>
+        <p>
+            プログラムが扱うデータの種類や記録方法などを定めたもの。「型」以外に「<strong>データ型</strong>」と呼ぶこともある。
+        </p>
+        <p>型に様々な種類があり、よく使われるものは以下の通り。</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>型名</td>
+                    <td>意味</td>
+                    <td>表現できる値</td>
+                    <td>デフォルト値</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>int</td>
+                    <td>整数</td>
+                    <td>-2,147,483,648 ~ 2,147,483,647</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>単精度浮動小数点数</td>
+                    <td>-3.4E^38 ~ +3.4E^38</td>
+                    <td>0.0f</td>
+                </tr>
+                <tr>
+                    <td>double</td>
+                    <td>倍精度浮動小数点数</td>
+                    <td>-1.7E^308 ~ +1.7E^38</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>bool</td>
+                    <td>真偽値</td>
+                    <td>true または false</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>string</td>
+                    <td>文字列</td>
+                    <td>文字の羅列</td>
+                    <td>null</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
