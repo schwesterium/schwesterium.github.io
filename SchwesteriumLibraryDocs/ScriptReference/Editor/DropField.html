@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DropField - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>DropField</h1>
+        <p>
+            ファイルをドロップできるフィールドを描画する
+        </p>
+    </div>
+
+    <div id="static-functions">
+        <h1>Static関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>bool Draw(Rect rect, string label, out string[] paths, out UnityEngine.Object[] objects)</code></td>
+                    <td>ドロップできるフィールドを描画する<br>rect: 描画位置とサイズ, label: ラベル, (out) paths: ドラッグされているファイルパス, (out) objects: ドラッグされているobjectsの参照</td>
+                    <td><code>ドロップできたか</code></td>
+                </tr>
+                <tr>
+                    <td><code>bool Draw(Rect rect, string label, out string[] paths, out UnityEngine.Object[] objects)</code></td>
+                    <td>ドロップできるフィールドを描画する<br>label: ラベル, (out) paths: ドラッグされているファイルパス, (out) objects: ドラッグされているobjectsの参照</td>
+                    <td><code>ドロップできたか</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
