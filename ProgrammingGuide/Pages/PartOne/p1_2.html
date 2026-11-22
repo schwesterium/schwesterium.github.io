@@ -31,11 +31,10 @@
         </div>
 
 
-        <p>
-            さて、上記の例を実際にコードにして入力しよう。
-            <details>
-                <summary>ソースコードを見る (Code1_1)</summary>
-                <pre><code>
+        <p>さて、上記の例を実際にコードにして入力しよう。</p>
+        <details>
+            <summary>ソースコードを見る (Code1_1)</summary>
+            <pre><code>
 //変数の宣言 データを記憶しておくための領域（箱）に名前をつける
 int score;          //得点を保持
 
@@ -46,23 +45,22 @@ score = score + 10; //コインを取った！
 score = score + 30;
 
 Console.WriteLine(score); //得点を表示する
-                </code></pre>
+            </code></pre>
 
-                <div class="alerts-note">
-                    <p>イコール(<code>=</code>)は、左辺と右辺が等価であることを意味するが、C#やJavaなどにおいては代入として表す。(後述)</p>
-                </div>
-            </details>
-        </p>
+            <div class="alerts-note">
+                <p>イコール(<code>=</code>)は、左辺と右辺が等価であることを意味するが、C#やJavaなどにおいては代入として表す。(後述)</p>
+            </div>
+        </details>
+        
 
-        <p>
-            実行すると、画面に変数の値が表示される。実行結果は以下の通り。
-            <details>
-                <summary>実行結果 (Code1_1)</summary>
-                <pre><code>
+        <p>実行すると、画面に変数の値が表示される。実行結果は以下の通り。</p>
+        <details>
+            <summary>実行結果 (Code1_1)</summary>
+            <pre><code>
 40
-                </code></pre>
-            </details>
-        </p>
+            </code></pre>
+        </details>
+        
         
         <p>
             変数は、箱として例えられることが多い。<br>
@@ -78,10 +76,10 @@ Console.WriteLine(score); //得点を表示する
         <table>
             <thead>
                 <tr>
-                    <td>型名</td>
-                    <td>意味</td>
-                    <td>表現できる値</td>
-                    <td>デフォルト値</td>
+                    <th>型名</th>
+                    <th>意味</th>
+                    <th>表現できる値</th>
+                    <th>デフォルト値</th>
                 </tr>
             </thead>
             <tbody>
@@ -94,13 +92,13 @@ Console.WriteLine(score); //得点を表示する
                 <tr>
                     <td>float</td>
                     <td>単精度浮動小数点数</td>
-                    <td>-3.4E^38 ~ +3.4E^38</td>
+                    <td>-3.4E+38 ~ +3.4E+38</td>
                     <td>0.0f</td>
                 </tr>
                 <tr>
                     <td>double</td>
                     <td>倍精度浮動小数点数</td>
-                    <td>-1.7E^308 ~ +1.7E^308</td>
+                    <td>-1.7E+308 ~ +1.7E+308</td>
                     <td>0.0</td>
                 </tr>
                 <tr>
@@ -136,14 +134,14 @@ Console.WriteLine(score); //得点を表示する
         </p>
 
         <h2>変数名の規則</h2>
-        <p>
-            変数名のつけ方には規則があり、次の規則に従わない場合はエラーとなる。
-            <ul>
-                <li>変数名の先頭は、文字またはアンダースコア(_)で始めなければならない</li>
-                <li>C#で使う予約語と一致する名前は付けられない</li>
-                <li>Unicodeは含めることができる</li>
-            </ul>
-        </p>
+        <p>変数名のつけ方には規則があり、次の規則に従わない場合はエラーとなる。</p>
+            
+        <ul>
+            <li>変数名の先頭は、文字またはアンダースコア(_)で始めなければならない</li>
+            <li>C#で使う予約語と一致する名前は付けられない</li>
+            <li>Unicodeは含めることができる</li>
+        </ul>
+        
         <div class="alerts-note">
             <p>Unicodeに含まれる文字を変数名に使うことはできるものの、様々な理由から使われることはない。</p>
         </div>
@@ -176,10 +174,10 @@ virtual   void      volatile    while      case
         <table>
             <thead>
                 <tr>
-                    <td>演算子</td>
-                    <td>意味</td>
-                    <td>例</td>
-                    <td>結果</td>
+                    <th>演算子</th>
+                    <th>意味</th>
+                    <th>例</th>
+                    <th>結果</th>
                 </tr>
             </thead>
             <tbody>
@@ -306,9 +304,9 @@ Console.WriteLine((2 + 3) * 4);  //括弧内の加算 -> 乗算
         <table>
             <thead>
                 <tr>
-                    <td>演算子</td>
-                    <td>意味</td>
-                    <td>同じ意味の書き方</td>
+                    <th>演算子</th>
+                    <th>意味</th>
+                    <th>同じ意味の書き方</th>
                 </tr>
             </thead>
             <tbody>
@@ -368,8 +366,8 @@ Console.WriteLine(score);   //40
         <table>
             <thead>
                 <tr>
-                    <td>演算子</td>
-                    <td>名前</td>
+                    <th>演算子</th>
+                    <th>名前</th>
                 </tr>
             </thead>
             <tbody>
