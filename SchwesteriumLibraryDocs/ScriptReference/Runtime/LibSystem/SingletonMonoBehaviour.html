@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SingletonMonoBehaviour - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>SingletonMonoBehaviour&lt;T&gt;</h1>
+        <p>
+            <code>MonoBehaviour</code> を継承したシングルトンの基底クラス。
+        </p>
+    </div>
+
+    <div class="impl-note">
+        <p>継承 : <code>MonoBehaviour</code></p>
+    </div>
+
+    <div class="alerts-note">
+        <p>
+            T には派生クラス自身を指定する。<br>
+            Awake と OnDestroy は基底クラスが使用しているため、派生クラスでは <code>OnAwake()</code> と <code>OnDestoryed()</code> を override して使う。<br>
+            すでにインスタンスが存在する場合、後から生成されたインスタンスは Awake 時に GameObject ごと破棄される。
+        </p>
+    </div>
+
+    <div id="variables">
+        <h1>変数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>Instance</code></td>
+                    <td><code>static T</code></td>
+                    <td>唯一のインスタンス。存在しない場合は <code>null</code>(読み取り専用)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="protected-functions">
+        <h1>Protected関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>virtual void OnAwake()</code></td>
+                    <td>Awake時、インスタンスの登録後に呼ばれる</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>virtual void OnDestoryed()</code></td>
+                    <td>OnDestroy時に呼ばれる</td>
+                    <td><code>void</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

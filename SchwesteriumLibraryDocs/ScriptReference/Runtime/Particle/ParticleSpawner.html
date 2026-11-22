@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ParticleSpawner - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>ParticleSpawner</h1>
+        <p>
+            名前で登録した <code>ParticleSystem</code> を生成して再生するクラス。
+        </p>
+    </div>
+
+    <div class="impl-note">
+        <p>継承 : <code>SingletonMonoBehaviour&lt;ParticleSpawner&gt;</code></p>
+    </div>
+
+    <div id="public-functions">
+        <h1>Public関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>void Play(string name, Vector3 position, &lt;br&gt;Quaternion rotation = default, Transform parent = null)</code></td>
+                    <td>名前に対応するパーティクルを生成して再生する<br>name: 登録した名前, position: 生成位置, rotation: 回転, parent: 親のTransform</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void Play(string name, float normalizedValue, Vector3 position, &lt;br&gt;Quaternion rotation = default, Transform parent = null)</code></td>
+                    <td><code>ParticleColorByValue</code>を持つパーティクルの色を設定してから再生する<br>name: 登録した名前, normalizedValue: 色を決める値(0~1), position: 生成位置, rotation: 回転, parent: 親のTransform</td>
+                    <td><code>void</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

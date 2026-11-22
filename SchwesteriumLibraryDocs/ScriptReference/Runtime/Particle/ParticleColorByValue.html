@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ParticleColorByValue - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>ParticleColorByValue</h1>
+        <p>
+            Gradientで設定した色をもとに、0~1の値でパーティクルの色を変える。
+        </p>
+    </div>
+
+    <div class="impl-note">
+        <p>継承 : <code>MonoBehaviour</code></p>
+    </div>
+
+    <div class="alerts-note">
+        <p><code>ParticleSystem</code> が必要。Inspector の Particle に対象の <code>ParticleSystem</code> を設定する。</p>
+    </div>
+
+    <div id="public-functions">
+        <h1>Public関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>void Apply(float normalizedValue)</code></td>
+                    <td><code>Gradient</code> を <code>normalizedValue</code>(0~1)で評価した色を、<code>ParticleSystem</code> の StartColor に設定する</td>
+                    <td><code>void</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

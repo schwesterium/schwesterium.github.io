@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GUISize - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>GUISize</h1>
+        <p>
+            Editor拡張のGUI描画で使う、共通のサイズ定数を提供するクラス。
+            <code>Width</code>・<code>Height</code>・<code>Space</code> は定数、<code>Layout</code> は <code>GUILayoutOption</code> を返す。
+        </p>
+    </div>
+
+    <div id="const-variables">
+        <h1>定数</h1>
+        <h2>GUISize.Width</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>S</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>60</code> : 幅(小)</td>
+                </tr>
+                <tr>
+                    <td><code>M</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>100</code> : 幅(中)</td>
+                </tr>
+                <tr>
+                    <td><code>L</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>160</code> : 幅(大)</td>
+                </tr>
+                <tr>
+                    <td><code>Label</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>120</code> : ラベルの幅</td>
+                </tr>
+                <tr>
+                    <td><code>Icon</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>24</code> : アイコンの幅</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>GUISize.Height</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>S</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>18</code> : 高さ(小)</td>
+                </tr>
+                <tr>
+                    <td><code>M</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>24</code> : 高さ(中)</td>
+                </tr>
+                <tr>
+                    <td><code>L</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>32</code> : 高さ(大)</td>
+                </tr>
+                <tr>
+                    <td><code>XL</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>48</code> : 高さ(特大)</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>GUISize.Space</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>XS</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>2</code> : 余白(極小)</td>
+                </tr>
+                <tr>
+                    <td><code>S</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>4</code> : 余白(小)</td>
+                </tr>
+                <tr>
+                    <td><code>M</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>8</code> : 余白(中)</td>
+                </tr>
+                <tr>
+                    <td><code>L</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>16</code> : 余白(大)</td>
+                </tr>
+                <tr>
+                    <td><code>XL</code></td>
+                    <td><code>const float</code></td>
+                    <td><code>24</code> : 余白(特大)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="variables">
+        <h1>変数</h1>
+        <h2>GUISize.Layout</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>WidthS</code></td>
+                    <td><code>static GUILayoutOption</code></td>
+                    <td><code>GUILayout.Width(Width.S)</code></td>
+                </tr>
+                <tr>
+                    <td><code>WidthM</code></td>
+                    <td><code>static GUILayoutOption</code></td>
+                    <td><code>GUILayout.Width(Width.M)</code></td>
+                </tr>
+                <tr>
+                    <td><code>WidthL</code></td>
+                    <td><code>static GUILayoutOption</code></td>
+                    <td><code>GUILayout.Width(Width.L)</code></td>
+                </tr>
+                <tr>
+                    <td><code>HeightS</code></td>
+                    <td><code>static GUILayoutOption</code></td>
+                    <td><code>GUILayout.Height(Height.S)</code></td>
+                </tr>
+                <tr>
+                    <td><code>HeightM</code></td>
+                    <td><code>static GUILayoutOption</code></td>
+                    <td><code>GUILayout.Height(Height.M)</code></td>
+                </tr>
+                <tr>
+                    <td><code>HeightL</code></td>
+                    <td><code>static GUILayoutOption</code></td>
+                    <td><code>GUILayout.Height(Height.L)</code></td>
+                </tr>
+                <tr>
+                    <td><code>HeightXL</code></td>
+                    <td><code>static GUILayoutOption</code></td>
+                    <td><code>GUILayout.Height(Height.XL)</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

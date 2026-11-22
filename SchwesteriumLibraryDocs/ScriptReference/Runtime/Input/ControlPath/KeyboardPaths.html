@@ -1,0 +1,745 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>KeyboardPaths - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>KeyboardPaths</h1>
+        <p>
+            InputSystem用 キーボードのコントロールパス。
+        </p>
+    </div>
+
+    <div id="const-variables">
+        <h1>定数</h1>
+        <h2>基本キー・記号・矢印</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>ESCAPE</code></td>
+                    <td><code>const string</code></td>
+                    <td>Escapeキー<br><code>&lt;Keyboard&gt;/escape</code></td>
+                </tr>
+                <tr>
+                    <td><code>SPACE</code></td>
+                    <td><code>const string</code></td>
+                    <td>スペースキー<br><code>&lt;Keyboard&gt;/space</code></td>
+                </tr>
+                <tr>
+                    <td><code>ENTER</code></td>
+                    <td><code>const string</code></td>
+                    <td>Enterキー<br><code>&lt;Keyboard&gt;/enter</code></td>
+                </tr>
+                <tr>
+                    <td><code>TAB</code></td>
+                    <td><code>const string</code></td>
+                    <td>Tabキー<br><code>&lt;Keyboard&gt;/tab</code></td>
+                </tr>
+                <tr>
+                    <td><code>BACKQUOTE</code></td>
+                    <td><code>const string</code></td>
+                    <td>` キー<br><code>&lt;Keyboard&gt;/backquote</code></td>
+                </tr>
+                <tr>
+                    <td><code>QUOTE</code></td>
+                    <td><code>const string</code></td>
+                    <td>' キー<br><code>&lt;Keyboard&gt;/quote</code></td>
+                </tr>
+                <tr>
+                    <td><code>SEMICOLON</code></td>
+                    <td><code>const string</code></td>
+                    <td>; キー<br><code>&lt;Keyboard&gt;/semicolon</code></td>
+                </tr>
+                <tr>
+                    <td><code>COMMA</code></td>
+                    <td><code>const string</code></td>
+                    <td>, キー<br><code>&lt;Keyboard&gt;/comma</code></td>
+                </tr>
+                <tr>
+                    <td><code>PERIOD</code></td>
+                    <td><code>const string</code></td>
+                    <td>. キー<br><code>&lt;Keyboard&gt;/period</code></td>
+                </tr>
+                <tr>
+                    <td><code>SLASH</code></td>
+                    <td><code>const string</code></td>
+                    <td>/ キー<br><code>&lt;Keyboard&gt;/slash</code></td>
+                </tr>
+                <tr>
+                    <td><code>BACKSLASH</code></td>
+                    <td><code>const string</code></td>
+                    <td>\ キー<br><code>&lt;Keyboard&gt;/backslash</code></td>
+                </tr>
+                <tr>
+                    <td><code>LEFT_BRACKET</code></td>
+                    <td><code>const string</code></td>
+                    <td>[ キー<br><code>&lt;Keyboard&gt;/leftBracket</code></td>
+                </tr>
+                <tr>
+                    <td><code>RIGHT_BRACKET</code></td>
+                    <td><code>const string</code></td>
+                    <td>] キー<br><code>&lt;Keyboard&gt;/rightBracket</code></td>
+                </tr>
+                <tr>
+                    <td><code>MINUS</code></td>
+                    <td><code>const string</code></td>
+                    <td>- キー<br><code>&lt;Keyboard&gt;/minus</code></td>
+                </tr>
+                <tr>
+                    <td><code>EQUALS</code></td>
+                    <td><code>const string</code></td>
+                    <td>= キー<br><code>&lt;Keyboard&gt;/equals</code></td>
+                </tr>
+                <tr>
+                    <td><code>UP_ARROW</code></td>
+                    <td><code>const string</code></td>
+                    <td>上矢印キー<br><code>&lt;Keyboard&gt;/upArrow</code></td>
+                </tr>
+                <tr>
+                    <td><code>DOWN_ARROW</code></td>
+                    <td><code>const string</code></td>
+                    <td>下矢印キー<br><code>&lt;Keyboard&gt;/downArrow</code></td>
+                </tr>
+                <tr>
+                    <td><code>LEFT_ARROW</code></td>
+                    <td><code>const string</code></td>
+                    <td>左矢印キー<br><code>&lt;Keyboard&gt;/leftArrow</code></td>
+                </tr>
+                <tr>
+                    <td><code>RIGHT_ARROW</code></td>
+                    <td><code>const string</code></td>
+                    <td>右矢印キー<br><code>&lt;Keyboard&gt;/rightArrow</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>アルファベット</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>A</code></td>
+                    <td><code>const string</code></td>
+                    <td>Aキー<br><code>&lt;Keyboard&gt;/a</code></td>
+                </tr>
+                <tr>
+                    <td><code>B</code></td>
+                    <td><code>const string</code></td>
+                    <td>Bキー<br><code>&lt;Keyboard&gt;/b</code></td>
+                </tr>
+                <tr>
+                    <td><code>C</code></td>
+                    <td><code>const string</code></td>
+                    <td>Cキー<br><code>&lt;Keyboard&gt;/c</code></td>
+                </tr>
+                <tr>
+                    <td><code>D</code></td>
+                    <td><code>const string</code></td>
+                    <td>Dキー<br><code>&lt;Keyboard&gt;/d</code></td>
+                </tr>
+                <tr>
+                    <td><code>E</code></td>
+                    <td><code>const string</code></td>
+                    <td>Eキー<br><code>&lt;Keyboard&gt;/e</code></td>
+                </tr>
+                <tr>
+                    <td><code>F</code></td>
+                    <td><code>const string</code></td>
+                    <td>Fキー<br><code>&lt;Keyboard&gt;/f</code></td>
+                </tr>
+                <tr>
+                    <td><code>G</code></td>
+                    <td><code>const string</code></td>
+                    <td>Gキー<br><code>&lt;Keyboard&gt;/g</code></td>
+                </tr>
+                <tr>
+                    <td><code>H</code></td>
+                    <td><code>const string</code></td>
+                    <td>Hキー<br><code>&lt;Keyboard&gt;/h</code></td>
+                </tr>
+                <tr>
+                    <td><code>I</code></td>
+                    <td><code>const string</code></td>
+                    <td>Iキー<br><code>&lt;Keyboard&gt;/i</code></td>
+                </tr>
+                <tr>
+                    <td><code>J</code></td>
+                    <td><code>const string</code></td>
+                    <td>Jキー<br><code>&lt;Keyboard&gt;/j</code></td>
+                </tr>
+                <tr>
+                    <td><code>K</code></td>
+                    <td><code>const string</code></td>
+                    <td>Kキー<br><code>&lt;Keyboard&gt;/k</code></td>
+                </tr>
+                <tr>
+                    <td><code>L</code></td>
+                    <td><code>const string</code></td>
+                    <td>Lキー<br><code>&lt;Keyboard&gt;/l</code></td>
+                </tr>
+                <tr>
+                    <td><code>M</code></td>
+                    <td><code>const string</code></td>
+                    <td>Mキー<br><code>&lt;Keyboard&gt;/m</code></td>
+                </tr>
+                <tr>
+                    <td><code>N</code></td>
+                    <td><code>const string</code></td>
+                    <td>Nキー<br><code>&lt;Keyboard&gt;/n</code></td>
+                </tr>
+                <tr>
+                    <td><code>O</code></td>
+                    <td><code>const string</code></td>
+                    <td>Oキー<br><code>&lt;Keyboard&gt;/o</code></td>
+                </tr>
+                <tr>
+                    <td><code>P</code></td>
+                    <td><code>const string</code></td>
+                    <td>Pキー<br><code>&lt;Keyboard&gt;/p</code></td>
+                </tr>
+                <tr>
+                    <td><code>Q</code></td>
+                    <td><code>const string</code></td>
+                    <td>Qキー<br><code>&lt;Keyboard&gt;/q</code></td>
+                </tr>
+                <tr>
+                    <td><code>R</code></td>
+                    <td><code>const string</code></td>
+                    <td>Rキー<br><code>&lt;Keyboard&gt;/r</code></td>
+                </tr>
+                <tr>
+                    <td><code>S</code></td>
+                    <td><code>const string</code></td>
+                    <td>Sキー<br><code>&lt;Keyboard&gt;/s</code></td>
+                </tr>
+                <tr>
+                    <td><code>T</code></td>
+                    <td><code>const string</code></td>
+                    <td>Tキー<br><code>&lt;Keyboard&gt;/t</code></td>
+                </tr>
+                <tr>
+                    <td><code>U</code></td>
+                    <td><code>const string</code></td>
+                    <td>Uキー<br><code>&lt;Keyboard&gt;/u</code></td>
+                </tr>
+                <tr>
+                    <td><code>V</code></td>
+                    <td><code>const string</code></td>
+                    <td>Vキー<br><code>&lt;Keyboard&gt;/v</code></td>
+                </tr>
+                <tr>
+                    <td><code>W</code></td>
+                    <td><code>const string</code></td>
+                    <td>Wキー<br><code>&lt;Keyboard&gt;/w</code></td>
+                </tr>
+                <tr>
+                    <td><code>X</code></td>
+                    <td><code>const string</code></td>
+                    <td>Xキー<br><code>&lt;Keyboard&gt;/x</code></td>
+                </tr>
+                <tr>
+                    <td><code>Y</code></td>
+                    <td><code>const string</code></td>
+                    <td>Yキー<br><code>&lt;Keyboard&gt;/y</code></td>
+                </tr>
+                <tr>
+                    <td><code>Z</code></td>
+                    <td><code>const string</code></td>
+                    <td>Zキー<br><code>&lt;Keyboard&gt;/z</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>数字</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>KEY_1</code></td>
+                    <td><code>const string</code></td>
+                    <td>数字の 1 キー<br><code>&lt;Keyboard&gt;/1</code></td>
+                </tr>
+                <tr>
+                    <td><code>KEY_2</code></td>
+                    <td><code>const string</code></td>
+                    <td>数字の 2 キー<br><code>&lt;Keyboard&gt;/2</code></td>
+                </tr>
+                <tr>
+                    <td><code>KEY_3</code></td>
+                    <td><code>const string</code></td>
+                    <td>数字の 3 キー<br><code>&lt;Keyboard&gt;/3</code></td>
+                </tr>
+                <tr>
+                    <td><code>KEY_4</code></td>
+                    <td><code>const string</code></td>
+                    <td>数字の 4 キー<br><code>&lt;Keyboard&gt;/4</code></td>
+                </tr>
+                <tr>
+                    <td><code>KEY_5</code></td>
+                    <td><code>const string</code></td>
+                    <td>数字の 5 キー<br><code>&lt;Keyboard&gt;/5</code></td>
+                </tr>
+                <tr>
+                    <td><code>KEY_6</code></td>
+                    <td><code>const string</code></td>
+                    <td>数字の 6 キー<br><code>&lt;Keyboard&gt;/6</code></td>
+                </tr>
+                <tr>
+                    <td><code>KEY_7</code></td>
+                    <td><code>const string</code></td>
+                    <td>数字の 7 キー<br><code>&lt;Keyboard&gt;/7</code></td>
+                </tr>
+                <tr>
+                    <td><code>KEY_8</code></td>
+                    <td><code>const string</code></td>
+                    <td>数字の 8 キー<br><code>&lt;Keyboard&gt;/8</code></td>
+                </tr>
+                <tr>
+                    <td><code>KEY_9</code></td>
+                    <td><code>const string</code></td>
+                    <td>数字の 9 キー<br><code>&lt;Keyboard&gt;/9</code></td>
+                </tr>
+                <tr>
+                    <td><code>KEY_0</code></td>
+                    <td><code>const string</code></td>
+                    <td>数字の 0 キー<br><code>&lt;Keyboard&gt;/0</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>修飾キー</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>LEFT_SHIFT</code></td>
+                    <td><code>const string</code></td>
+                    <td>左Shiftキー<br><code>&lt;Keyboard&gt;/leftShift</code></td>
+                </tr>
+                <tr>
+                    <td><code>RIGHT_SHIFT</code></td>
+                    <td><code>const string</code></td>
+                    <td>右Shiftキー<br><code>&lt;Keyboard&gt;/rightShift</code></td>
+                </tr>
+                <tr>
+                    <td><code>SHIFT</code></td>
+                    <td><code>const string</code></td>
+                    <td>Shiftキー(左右どちらか)<br><code>&lt;Keyboard&gt;/shift</code></td>
+                </tr>
+                <tr>
+                    <td><code>LEFT_ALT</code></td>
+                    <td><code>const string</code></td>
+                    <td>左Altキー<br><code>&lt;Keyboard&gt;/leftAlt</code></td>
+                </tr>
+                <tr>
+                    <td><code>RIGHT_ALT</code></td>
+                    <td><code>const string</code></td>
+                    <td>右Altキー<br><code>&lt;Keyboard&gt;/rightAlt</code></td>
+                </tr>
+                <tr>
+                    <td><code>ALT</code></td>
+                    <td><code>const string</code></td>
+                    <td>Altキー(左右どちらか)<br><code>&lt;Keyboard&gt;/alt</code></td>
+                </tr>
+                <tr>
+                    <td><code>LEFT_CTRL</code></td>
+                    <td><code>const string</code></td>
+                    <td>左Ctrlキー<br><code>&lt;Keyboard&gt;/leftCtrl</code></td>
+                </tr>
+                <tr>
+                    <td><code>RIGHT_CTRL</code></td>
+                    <td><code>const string</code></td>
+                    <td>右Ctrlキー<br><code>&lt;Keyboard&gt;/rightCtrl</code></td>
+                </tr>
+                <tr>
+                    <td><code>CTRL</code></td>
+                    <td><code>const string</code></td>
+                    <td>Ctrlキー(左右どちらか)<br><code>&lt;Keyboard&gt;/ctrl</code></td>
+                </tr>
+                <tr>
+                    <td><code>LEFT_META</code></td>
+                    <td><code>const string</code></td>
+                    <td>左Metaキー(Windowsキー / Commandキー)<br><code>&lt;Keyboard&gt;/leftMeta</code></td>
+                </tr>
+                <tr>
+                    <td><code>RIGHT_META</code></td>
+                    <td><code>const string</code></td>
+                    <td>右Metaキー(Windowsキー / Commandキー)<br><code>&lt;Keyboard&gt;/rightMeta</code></td>
+                </tr>
+                <tr>
+                    <td><code>CONTEXT_MENU</code></td>
+                    <td><code>const string</code></td>
+                    <td>メニューキー<br><code>&lt;Keyboard&gt;/contextMenu</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>編集・システムキー</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>BACKSPACE</code></td>
+                    <td><code>const string</code></td>
+                    <td>Backspaceキー<br><code>&lt;Keyboard&gt;/backspace</code></td>
+                </tr>
+                <tr>
+                    <td><code>PAGE_DOWN</code></td>
+                    <td><code>const string</code></td>
+                    <td>PageDownキー<br><code>&lt;Keyboard&gt;/pageDown</code></td>
+                </tr>
+                <tr>
+                    <td><code>PAGE_UP</code></td>
+                    <td><code>const string</code></td>
+                    <td>PageUpキー<br><code>&lt;Keyboard&gt;/pageUp</code></td>
+                </tr>
+                <tr>
+                    <td><code>HOME</code></td>
+                    <td><code>const string</code></td>
+                    <td>Homeキー<br><code>&lt;Keyboard&gt;/home</code></td>
+                </tr>
+                <tr>
+                    <td><code>END</code></td>
+                    <td><code>const string</code></td>
+                    <td>Endキー<br><code>&lt;Keyboard&gt;/end</code></td>
+                </tr>
+                <tr>
+                    <td><code>INSERT</code></td>
+                    <td><code>const string</code></td>
+                    <td>Insertキー<br><code>&lt;Keyboard&gt;/insert</code></td>
+                </tr>
+                <tr>
+                    <td><code>DELETE</code></td>
+                    <td><code>const string</code></td>
+                    <td>Deleteキー<br><code>&lt;Keyboard&gt;/delete</code></td>
+                </tr>
+                <tr>
+                    <td><code>CAPS_LOCK</code></td>
+                    <td><code>const string</code></td>
+                    <td>CapsLockキー<br><code>&lt;Keyboard&gt;/capsLock</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUM_LOCK</code></td>
+                    <td><code>const string</code></td>
+                    <td>NumLockキー<br><code>&lt;Keyboard&gt;/numLock</code></td>
+                </tr>
+                <tr>
+                    <td><code>PRINT_SCREEN</code></td>
+                    <td><code>const string</code></td>
+                    <td>PrintScreenキー<br><code>&lt;Keyboard&gt;/printScreen</code></td>
+                </tr>
+                <tr>
+                    <td><code>SCROLL_LOCK</code></td>
+                    <td><code>const string</code></td>
+                    <td>ScrollLockキー<br><code>&lt;Keyboard&gt;/scrollLock</code></td>
+                </tr>
+                <tr>
+                    <td><code>PAUSE</code></td>
+                    <td><code>const string</code></td>
+                    <td>Pauseキー<br><code>&lt;Keyboard&gt;/pause</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>テンキー</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>NUMPAD_ENTER</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーのEnter<br><code>&lt;Keyboard&gt;/numpadEnter</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_DIVIDE</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの ÷<br><code>&lt;Keyboard&gt;/numpadDivide</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_MULTIPLY</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの ×<br><code>&lt;Keyboard&gt;/numpadMultiply</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_PLUS</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの +<br><code>&lt;Keyboard&gt;/numpadPlus</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_MINUS</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの -<br><code>&lt;Keyboard&gt;/numpadMinus</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_PERIOD</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの .<br><code>&lt;Keyboard&gt;/numpadPeriod</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_EQUALS</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの =<br><code>&lt;Keyboard&gt;/numpadEquals</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_1</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの 1<br><code>&lt;Keyboard&gt;/numpad1</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_2</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの 2<br><code>&lt;Keyboard&gt;/numpad2</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_3</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの 3<br><code>&lt;Keyboard&gt;/numpad3</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_4</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの 4<br><code>&lt;Keyboard&gt;/numpad4</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_5</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの 5<br><code>&lt;Keyboard&gt;/numpad5</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_6</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの 6<br><code>&lt;Keyboard&gt;/numpad6</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_7</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの 7<br><code>&lt;Keyboard&gt;/numpad7</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_8</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの 8<br><code>&lt;Keyboard&gt;/numpad8</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_9</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの 9<br><code>&lt;Keyboard&gt;/numpad9</code></td>
+                </tr>
+                <tr>
+                    <td><code>NUMPAD_0</code></td>
+                    <td><code>const string</code></td>
+                    <td>テンキーの 0<br><code>&lt;Keyboard&gt;/numpad0</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>ファンクションキー</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>F1</code></td>
+                    <td><code>const string</code></td>
+                    <td>F1キー<br><code>&lt;Keyboard&gt;/f1</code></td>
+                </tr>
+                <tr>
+                    <td><code>F2</code></td>
+                    <td><code>const string</code></td>
+                    <td>F2キー<br><code>&lt;Keyboard&gt;/f2</code></td>
+                </tr>
+                <tr>
+                    <td><code>F3</code></td>
+                    <td><code>const string</code></td>
+                    <td>F3キー<br><code>&lt;Keyboard&gt;/f3</code></td>
+                </tr>
+                <tr>
+                    <td><code>F4</code></td>
+                    <td><code>const string</code></td>
+                    <td>F4キー<br><code>&lt;Keyboard&gt;/f4</code></td>
+                </tr>
+                <tr>
+                    <td><code>F5</code></td>
+                    <td><code>const string</code></td>
+                    <td>F5キー<br><code>&lt;Keyboard&gt;/f5</code></td>
+                </tr>
+                <tr>
+                    <td><code>F6</code></td>
+                    <td><code>const string</code></td>
+                    <td>F6キー<br><code>&lt;Keyboard&gt;/f6</code></td>
+                </tr>
+                <tr>
+                    <td><code>F7</code></td>
+                    <td><code>const string</code></td>
+                    <td>F7キー<br><code>&lt;Keyboard&gt;/f7</code></td>
+                </tr>
+                <tr>
+                    <td><code>F8</code></td>
+                    <td><code>const string</code></td>
+                    <td>F8キー<br><code>&lt;Keyboard&gt;/f8</code></td>
+                </tr>
+                <tr>
+                    <td><code>F9</code></td>
+                    <td><code>const string</code></td>
+                    <td>F9キー<br><code>&lt;Keyboard&gt;/f9</code></td>
+                </tr>
+                <tr>
+                    <td><code>F10</code></td>
+                    <td><code>const string</code></td>
+                    <td>F10キー<br><code>&lt;Keyboard&gt;/f10</code></td>
+                </tr>
+                <tr>
+                    <td><code>F11</code></td>
+                    <td><code>const string</code></td>
+                    <td>F11キー<br><code>&lt;Keyboard&gt;/f11</code></td>
+                </tr>
+                <tr>
+                    <td><code>F12</code></td>
+                    <td><code>const string</code></td>
+                    <td>F12キー<br><code>&lt;Keyboard&gt;/f12</code></td>
+                </tr>
+                <tr>
+                    <td><code>F13</code></td>
+                    <td><code>const string</code></td>
+                    <td>F13キー<br><code>&lt;Keyboard&gt;/f13</code></td>
+                </tr>
+                <tr>
+                    <td><code>F14</code></td>
+                    <td><code>const string</code></td>
+                    <td>F14キー<br><code>&lt;Keyboard&gt;/f14</code></td>
+                </tr>
+                <tr>
+                    <td><code>F15</code></td>
+                    <td><code>const string</code></td>
+                    <td>F15キー<br><code>&lt;Keyboard&gt;/f15</code></td>
+                </tr>
+                <tr>
+                    <td><code>F16</code></td>
+                    <td><code>const string</code></td>
+                    <td>F16キー<br><code>&lt;Keyboard&gt;/f16</code></td>
+                </tr>
+                <tr>
+                    <td><code>F17</code></td>
+                    <td><code>const string</code></td>
+                    <td>F17キー<br><code>&lt;Keyboard&gt;/f17</code></td>
+                </tr>
+                <tr>
+                    <td><code>F18</code></td>
+                    <td><code>const string</code></td>
+                    <td>F18キー<br><code>&lt;Keyboard&gt;/f18</code></td>
+                </tr>
+                <tr>
+                    <td><code>F19</code></td>
+                    <td><code>const string</code></td>
+                    <td>F19キー<br><code>&lt;Keyboard&gt;/f19</code></td>
+                </tr>
+                <tr>
+                    <td><code>F20</code></td>
+                    <td><code>const string</code></td>
+                    <td>F20キー<br><code>&lt;Keyboard&gt;/f20</code></td>
+                </tr>
+                <tr>
+                    <td><code>F21</code></td>
+                    <td><code>const string</code></td>
+                    <td>F21キー<br><code>&lt;Keyboard&gt;/f21</code></td>
+                </tr>
+                <tr>
+                    <td><code>F22</code></td>
+                    <td><code>const string</code></td>
+                    <td>F22キー<br><code>&lt;Keyboard&gt;/f22</code></td>
+                </tr>
+                <tr>
+                    <td><code>F23</code></td>
+                    <td><code>const string</code></td>
+                    <td>F23キー<br><code>&lt;Keyboard&gt;/f23</code></td>
+                </tr>
+                <tr>
+                    <td><code>F24</code></td>
+                    <td><code>const string</code></td>
+                    <td>F24キー<br><code>&lt;Keyboard&gt;/f24</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>OEMキー</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>OEM1</code></td>
+                    <td><code>const string</code></td>
+                    <td>OEM固有キー 1(キーボードの配列に依存)<br><code>&lt;Keyboard&gt;/OEM1</code></td>
+                </tr>
+                <tr>
+                    <td><code>OEM2</code></td>
+                    <td><code>const string</code></td>
+                    <td>OEM固有キー 2(キーボードの配列に依存)<br><code>&lt;Keyboard&gt;/OEM2</code></td>
+                </tr>
+                <tr>
+                    <td><code>OEM3</code></td>
+                    <td><code>const string</code></td>
+                    <td>OEM固有キー 3(キーボードの配列に依存)<br><code>&lt;Keyboard&gt;/OEM3</code></td>
+                </tr>
+                <tr>
+                    <td><code>OEM4</code></td>
+                    <td><code>const string</code></td>
+                    <td>OEM固有キー 4(キーボードの配列に依存)<br><code>&lt;Keyboard&gt;/OEM4</code></td>
+                </tr>
+                <tr>
+                    <td><code>OEM5</code></td>
+                    <td><code>const string</code></td>
+                    <td>OEM固有キー 5(キーボードの配列に依存)<br><code>&lt;Keyboard&gt;/OEM5</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

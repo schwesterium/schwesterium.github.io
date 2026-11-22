@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VolumeSetter - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>VolumeSetter</h1>
+        <p>
+            <code>AudioMixer</code> を使って、BGM・SE・UIの音量を管理するクラス。
+        </p>
+    </div>
+
+    <div class="alerts-warning">
+        <p><code>AudioMixer</code> に公開(Expose)したパラメータ <code>BGMParam</code>・<code>SEParam</code>・<code>UISoundParam</code> が必要。</p>
+    </div>
+
+    <div id="constructor">
+        <h1>コンストラクタ</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>引数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>VolumeSetter(AudioMixer audioMixer)</code></td>
+                    <td>audioMixer: 音量を操作するAudioMixer<br>生成時に、すべての音量を初期値(-10dB)に設定する</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="variables">
+        <h1>変数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>BGM_Volume</code></td>
+                    <td><code>float</code></td>
+                    <td>BGMの音量(0~1)。<code>BGMParam</code> を操作する</td>
+                </tr>
+                <tr>
+                    <td><code>SE_Volume</code></td>
+                    <td><code>float</code></td>
+                    <td>SEの音量(0~1)。<code>SEParam</code> を操作する</td>
+                </tr>
+                <tr>
+                    <td><code>UI_Volume</code></td>
+                    <td><code>float</code></td>
+                    <td>UIのSEの音量(0~1)。<code>UISoundParam</code>を操作する</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

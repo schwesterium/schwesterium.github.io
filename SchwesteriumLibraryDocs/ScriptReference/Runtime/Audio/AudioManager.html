@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AudioManager - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>AudioManager</h1>
+        <p>
+            BGM・SE・UI効果音の再生と音量を管理するクラス。
+            BGMのフェードイン・フェードアウトができる。
+        </p>
+    </div>
+
+    <div class="impl-note">
+        <p>継承 : <code>SingletonMonoBehaviour&lt;AudioManager&gt;</code></p>
+    </div>
+
+    <div class="alerts-note">
+        <p>再生するクリップは <code>AudioClipsData</code> に登録した名前で指定する。BGM・SE・UI でそれぞれ別の <code>AudioClipsData</code> を設定する。<br>Awake 時に <code>DontDestroyOnLoad</code> が呼ばれ、シーンをまたいで残る。<br><code>#define</code>ディレクティブ <code>UNITY_EDITOR</code> が有効な場合、ComponentのContextMenu <code>Update ClipData</code> で3つの <code>AudioClipsData</code> の辞書を更新できる。</p>
+    </div>
+
+    <div class="alerts-warning">
+        <p>BGMのフェード中は <code>PlayBGM()</code> と <code>StopBGM()</code> は実行できない(エラーログを出力する)。<code>FadeInBGM()</code> と <code>FadeOutBGM()</code> も、フェード中は実行されない(警告ログを出力する)。<br>音量の操作には <code>AudioMixer</code> に公開パラメータ <code>BGMParam</code>・<code>SEParam</code>・<code>UISoundParam</code> が必要。</p>
+    </div>
+
+    <div id="variables">
+        <h1>変数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>IsFading</code></td>
+                    <td><code>bool</code></td>
+                    <td>BGMがフェード中かどうか(読み取り専用)</td>
+                </tr>
+                <tr>
+                    <td><code>Volume</code></td>
+                    <td><code>VolumeSetter</code></td>
+                    <td>BGM・SE・UIの音量を管理する <code>VolumeSetter</code>。Awake時に作成される(読み取り専用)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="public-functions">
+        <h1>Public関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>void PlayBGM(string bgmName, float volume = 1f)</code></td>
+                    <td>BGMを再生する。再生中のBGMがある場合は停止する<br>フェード中、または存在しない名前の場合はエラーログを出力して何もしない<br>bgmName: BGM名, volume: 音量</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void PauseBGM()</code></td>
+                    <td>BGMを一時停止する</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void StopBGM()</code></td>
+                    <td>BGMを停止する。フェード中は停止できない</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void ForcedStopBGM()</code></td>
+                    <td>BGMを強制停止する。フェード中の場合はフェードを中断して停止する</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void ChangeBGM(string bgmName)</code></td>
+                    <td>現在のBGMをフェードアウトして停止し、続けて指定したBGMをフェードインで再生する<br>フェード量はフェードアウト・フェードインともに <code>2</code></td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void FadeInBGM(float fadeInAmount, float targetVolume = 1, string bgmName = null, Action callback = null)</code></td>
+                    <td>BGMをフェードインさせる。フェード時間は <code>1 / fadeInAmount</code> 秒<br>bgmName を指定した場合は、音量0で再生を開始してからフェードインする<br>fadeInAmount: 値が大きいほど早くフェードインする(0より大きい値), targetVolume: 目標音量(0~1), bgmName: BGM名, callback: フェードイン後に実行する関数</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void FadeOutBGM(float fadeOutAmount, float targetVolume = 0, bool isStop = false, Action callback = null)</code></td>
+                    <td>BGMをフェードアウトさせる。フェード時間は <code>1 / fadeOutAmount</code> 秒<br>fadeOutAmount: 値が大きいほど早くフェードアウトする(0より大きい値), targetVolume: 目標音量(0~1), isStop: フェードアウト終了時にBGMを停止するか, callback: フェードアウト後に実行する関数</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void PlaySE(string seName, float volume = 1)</code></td>
+                    <td>SEを再生する<br>存在しない名前の場合はエラーログを出力して何もしない<br>seName: SE名, volume: 音量</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void PlayLoopSE(string seName, float volume = 1)</code></td>
+                    <td>ループSEを再生する。同じSEが再生中の場合は何もしない<br>seName: SE名, volume: 音量</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void StopLoopSE()</code></td>
+                    <td>ループSEを停止する</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>void PlayUI(string seName, float volume = 1)</code></td>
+                    <td>UIのSEを再生する<br>存在しない名前の場合はエラーログを出力して何もしない<br>seName: SE名, volume: 音量</td>
+                    <td><code>void</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

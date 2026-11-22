@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TriggerChecker - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>TriggerChecker</h1>
+        <p>
+            Triggerが特定のレイヤーのオブジェクトを検知したら、イベントを発火する。
+        </p>
+    </div>
+
+    <div class="impl-note">
+        <p>継承 : <code>MonoBehaviour</code></p>
+    </div>
+
+    <div class="alerts-note">
+        <p>
+            <code>Collider</code>が必要。IsTrigger を有効にして使う。<br>
+            オブジェクトが破棄されるとき、登録されているイベントはすべて解除される。
+        </p>
+    </div>
+
+    <div id="variables">
+        <h1>変数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>OnEnter</code></td>
+                    <td><code>event Action&lt;Collider&gt;</code></td>
+                    <td>指定したレイヤーのオブジェクトがTriggerに入ったときに発火する。引数は入ってきた <code>Collider</code></td>
+                </tr>
+                <tr>
+                    <td><code>OnExit</code></td>
+                    <td><code>event Action&lt;Collider&gt;</code></td>
+                    <td>指定したレイヤーのオブジェクトがTriggerから出たときに発火する。引数は出ていった <code>Collider</code></td>
+                </tr>
+                <tr>
+                    <td><code>Collider</code></td>
+                    <td><code>Collider</code></td>
+                    <td>このオブジェクトの <code>Collider</code>(読み取り専用)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

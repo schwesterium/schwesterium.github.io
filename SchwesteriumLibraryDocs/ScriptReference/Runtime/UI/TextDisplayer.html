@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TextDisplayer - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>TextDisplayer&lt;T&gt;</h1>
+        <p>
+            <code>TextMeshProUGUI</code> に値を表示するための抽象クラス。
+            T型の値を <code>ToString()</code> して表示する。
+        </p>
+    </div>
+
+    <div class="impl-note">
+        <p>継承 : <code>MonoBehaviour</code></p>
+    </div>
+
+    <div class="alerts-note">
+        <p><code>TextMeshProUGUI</code> が必要。</p>
+    </div>
+
+    <div id="variables">
+        <h1>変数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>_text</code></td>
+                    <td><code>protected TextMeshProUGUI</code></td>
+                    <td>同じGameObjectの <code>TextMeshProUGUI</code>。Awake時に取得される</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="public-functions">
+        <h1>Public関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>virtual void OnStart()</code></td>
+                    <td>Awake時、<code>_text</code> の取得後に呼ばれる。初期化処理用</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>virtual void SetText(T text)</code></td>
+                    <td>text を <code>ToString()</code> した文字列を表示する<br>text: 表示する値</td>
+                    <td><code>void</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

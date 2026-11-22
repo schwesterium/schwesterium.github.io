@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PlayerPrefsBool - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>PlayerPrefsBool</h1>
+        <p>
+            <code>PlayerPrefs</code> でbool値を扱うためのクラス。
+            bool値は <code>true</code>: 1, <code>false</code>: 0 の整数として保存される。
+        </p>
+    </div>
+
+    <div id="static-functions">
+        <h1>Static関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>bool GetBool(string key, bool defaultValue)</code></td>
+                    <td><code>PlayerPrefs</code> からbool値を取得する<br>key: キー, defaultValue: キーが存在しない場合に返す値</td>
+                    <td>保存されている値<br>キーが存在しない場合は <code>defaultValue</code></td>
+                </tr>
+                <tr>
+                    <td><code>bool GetBool(string key)</code></td>
+                    <td><code>PlayerPrefs</code> からbool値を取得する<br>key: キー</td>
+                    <td>保存されている値<br>キーが存在しない場合は <code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>void SetBool(string key, bool value)</code></td>
+                    <td><code>PlayerPrefs</code> にbool値を保存する<br>key: キー, value: 保存する値</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td><code>bool GetBoolHasKey(string key)</code></td>
+                    <td>キーが存在する場合のみ、<code>PlayerPrefs</code> からbool値を取得する<br>キーが存在しない場合は警告ログを出力する<br>key: キー</td>
+                    <td>保存されている値<br>キーが存在しない場合は <code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>int GetIntHasKey(string key)</code></td>
+                    <td>キーが存在する場合のみ、<code>PlayerPrefs</code> からint値を取得する<br>キーが存在しない場合は警告ログを出力する<br>key: キー</td>
+                    <td>保存されている値<br>キーが存在しない場合は <code>0</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

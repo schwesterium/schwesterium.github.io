@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>UIMonoBehaviour - Schwesterium Library スクリプトリファレンス</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+</head>
+
+<body>
+    <div class="script-doc">
+        <h1>UIMonoBehaviour</h1>
+        <p>
+            UI用の <code>MonoBehaviour</code> の抽象クラス。
+            <code>RectTransform</code> を自動で取得する。
+        </p>
+    </div>
+
+    <div class="impl-note">
+        <p>継承 : <code>MonoBehaviour</code></p>
+    </div>
+
+    <div id="variables">
+        <h1>変数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>型</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>rectTransform</code></td>
+                    <td><code>protected RectTransform</code></td>
+                    <td>同じGameObjectの <code>RectTransform</code>。Awake時に取得される</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="protected-functions">
+        <h1>Protected関数</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>定義</th>
+                    <th>関数の説明</th>
+                    <th>戻り値の説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>virtual void OnAwake()</code></td>
+                    <td>Awake時、<code>rectTransform</code> の取得後に呼ばれる</td>
+                    <td><code>void</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
