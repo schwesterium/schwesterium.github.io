@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>変数と型</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/SchwesteriumLibraryDocs/docs.css">
+    <link rel="stylesheet" href="/ProgrammingGuide/guide.css">
 </head>
 
 <header>
@@ -13,18 +13,23 @@
 </header>
 
 <body>
-    <div class="content">
+    <div class="page-content">
         <h1>変数とは</h1>
         <p>
             データを記憶しておくための領域に名前を付けたもので、必要に応じてデータの出し入れができる。
         </p>
-        <p>
-            ゲームでの得点について、変数を使用して考えてみる。<br>
-            "score"という得点の変数があったとする。当然、ゲームの最初は持っている得点は0であるから、"score"は0が入っている。<br>
-            ここで、10点得るコインを取ると、"score"は+10され、"score"は10になる。<br>
-            さらに、コインを3枚取ると、"score"は+30され、"score"は40になる。
-            ゲームクリア時、"score"を利用してリザルト画面に得点を表示する。
-        </p>
+
+
+        <div class="example">
+            <p>
+                ゲームでの得点について、変数を使用して考えてみる。<br>
+                "score"という得点の変数があったとする。当然、ゲームの最初は持っている得点は0であるから、"score"は0が入っている。<br>
+                ここで、10点得るコインを取ると、"score"は+10され、"score"は10になる。<br>
+                さらに、コインを3枚取ると、"score"は+30され、"score"は40になる。
+                ゲームクリア時、"score"を利用してリザルト画面に得点を表示する。
+            </p>
+        </div>
+
 
         <p>
             さて、上記の例を実際にコードにして入力しよう。
@@ -37,11 +42,15 @@ int score;          //得点を保持
 //変数に値を代入する
 score = 0;          //ゲーム開始時は0点
 
-score = score + 10; //コインを取った！ 今の得点に、+10した値を得点として保存する
+score = score + 10; //コインを取った！
 score = score + 30;
 
 Console.WriteLine(score); //得点を表示する
                 </code></pre>
+
+                <div class="alerts-note">
+                    <p>イコール(<code>=</code>)は、左辺と右辺が等価であることを意味するが、C#やJavaなどにおいては代入として表す。(後述)</p>
+                </div>
             </details>
         </p>
 
@@ -57,7 +66,7 @@ Console.WriteLine(score); //得点を表示する
         
         <p>
             変数は、箱として例えられることが多い。<br>
-            <strong>「変数名」</strong>は箱の名前、「<strong>型名</strong>」は箱に入れるものの種類である。
+            <strong>「変数名」</strong>が箱の名前、「<strong>型名</strong>」が箱に入れるものの種類である。
             今回書いたコードの場合、<code>score</code>が変数名、その左にある<code>int</code>が型名となる。
         </p>
 
@@ -91,7 +100,7 @@ Console.WriteLine(score); //得点を表示する
                 <tr>
                     <td>double</td>
                     <td>倍精度浮動小数点数</td>
-                    <td>-1.7E^308 ~ +1.7E^38</td>
+                    <td>-1.7E^308 ~ +1.7E^308</td>
                     <td>0.0</td>
                 </tr>
                 <tr>
@@ -106,7 +115,328 @@ Console.WriteLine(score); //得点を表示する
                     <td>文字の羅列</td>
                     <td>null</td>
                 </tr>
+                <tr>
+                    <td>char</td>
+                    <td>文字</td>
+                    <td>単一のUnicode文字</td>
+                    <td>'\0'</td>
+                </tr>
             </tbody>
         </table>
+
+        <h1>変数を使う</h1>
+        <h2>変数の宣言と代入</h2>
+        <p>
+            Code1_1の2行目、<code>int score;</code>はscoreという名前のint型の変数を作っている。
+            変数の作成を「<strong>変数の宣言</strong>」と呼ぶ。<br>
+            5行目では、<code>score = 0;</code>と書くことで、変数scoreに整数0を入れている。
+            変数に値を入れることを「<strong>代入</strong>」と呼ぶ。<br>
+            また、変数の宣言と共に代入をすることが可能であり、<code>int score = 0;</code>と書くことで、scoreに最初から0を持たせることができる。
+            このように、変数に初期値を持たせることを「<strong>変数の初期化</strong>」と呼ぶ。
+        </p>
+
+        <h2>変数名の規則</h2>
+        <p>
+            変数名のつけ方には規則があり、次の規則に従わない場合はエラーとなる。
+            <ul>
+                <li>変数名の先頭は、文字またはアンダースコア(_)で始めなければならない</li>
+                <li>C#で使う予約語と一致する名前は付けられない</li>
+                <li>Unicodeは含めることができる</li>
+            </ul>
+        </p>
+        <div class="alerts-note">
+            <p>Unicodeに含まれる文字を変数名に使うことはできるものの、様々な理由から使われることはない。</p>
+        </div>
+
+        <h2>予約語</h2>
+        <p>プログラミング言語の仕様上、予め役割が決まっている単語のことを指し、その種類は言語によって異なる部分がある。</p>
+        <p>C#で使用する予約語は以下の通り</p>
+        <pre><code>
+abstract  as        base        bool       break     byte
+catch     char      checked     class      const     continue
+decimal   default   delegate    do         double    else
+enum      event     explicit    extern     false     finally
+fixed     float     for         foreach    goto      if
+implicit  in        int         interface  internal  is
+lock      long      namespace   new        null      object
+operator  out       override    params     private   protected
+public    readonly  ref         return     sbyte     sealed
+short     sizeof    stackalloc  static     string    struct
+switch    this      throw       true       try       typeof
+uint      ulong     unchecked   unsafe     ushort    using
+virtual   void      volatile    while      case
+        </code></pre>
+        <div class="alerts-note"><p>C#では予約語のことをキーワードと呼ぶ。</p></div>
+
+        <h1>演算</h1>
+        <p>
+            変数や数値を使って計算を行うことを「<strong>演算</strong>」と呼び、演算に使う記号を「<strong>演算子</strong>」と呼ぶ。<br>
+        </p>
+        <p>四則演算に使う演算子（算術演算子）は以下の通り。</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>演算子</td>
+                    <td>意味</td>
+                    <td>例</td>
+                    <td>結果</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>+</td>
+                    <td>加算</td>
+                    <td>10 + 2</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>減算</td>
+                    <td>10 - 2</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>乗算</td>
+                    <td>10 * 2</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>除算</td>
+                    <td>10 / 2</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>剰余（余りを求める）</td>
+                    <td>10 % 2</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>実際に、上記の演算子を使ってみよう。</p>
+        <details>
+            <summary>ソースコードを見る (Code1_2)</summary>
+            <pre><code>
+int a = 11;
+int b = 3;
+
+Console.WriteLine(a + b);   //加算
+Console.WriteLine(a - b);   //減算
+Console.WriteLine(a * b);   //乗算
+Console.WriteLine(a / b);   //除算
+Console.WriteLine(a % b);   //剰余
+
+//計算結果を変数に代入することもできる
+int sum = a + b;
+Console.WriteLine(sum);
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Code1_2)</summary>
+            <pre><code>
+14
+8
+33
+3
+2
+14
+            </code></pre>
+        </details>
+
+        <p>
+            実行結果を確認して、「除算の結果が正しくない」と疑問に思った人もいるだろう。<br>
+            これは、<b>整数同士の除算では、結果は整数となり小数点以下は切り捨てられる</b>からだ。
+            小数で求めたい場合は、最低でもどちらかを小数の型にしなければならない。
+        </p>
+
+        <p>実際に、型による除算結果の違いを確認しよう。</p>
+        <details>
+            <summary>ソースコードを見る (Code1_3)</summary>
+            <pre><code>
+Console.WriteLine(7 / 3);        //整数同士
+Console.WriteLine(7.0f / 3);     //小数が含まれる
+Console.WriteLine(7 / 3.0f);     //どちらか一方でもよい
+            </code></pre>
+        </details>
+
+        <details>
+            <summary>実行結果 (Code1_3)</summary>
+            <pre><code>
+2
+2.3333333
+2.3333333
+            </code></pre>
+        </details>
+
+        <div class="alerts-warning">
+            <p>除算を行う際、<b>0で割る</b>と実行時にエラー（例外）となりプログラムが停止するため、0で割らないように注意すること。</p>
+            <p>この、0で割ることを「<strong>0除算</strong>」と呼ぶ。</p>
+        </div>
+
+        <h2>演算の優先順位</h2>
+        <p>
+            算数と同じように、<code>*</code>、<code>/</code>、<code>%</code>は<code>+</code>、<code>-</code>よりも先に計算される。
+            また先に計算したい部分は、<code>( )</code>で囲むことで優先できる。
+        </p>
+
+        <p>実際に、演算の優先順位を確認しよう。</p>
+        <details>
+            <summary>ソースコードを見る (Code1_4)</summary>
+            <pre><code>
+Console.WriteLine(2 + 3 * 4);    //乗算 -> 加算
+Console.WriteLine((2 + 3) * 4);  //括弧内の加算 -> 乗算
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Code1_4)</summary>
+            <pre><code>
+14
+20
+            </code></pre>
+        </details>
+
+        <h1>複合代入演算</h1>
+        <p>
+            Code1_1では、得点を加算するために<code>score = score + 10;</code>と書いた。
+            このように「変数を使って計算し、その結果を同じ変数に代入する」処理はよく使われるため、簡潔に書くための演算子が用意されている。これを「<strong>複合代入演算子</strong>」と呼ぶ。
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <td>演算子</td>
+                    <td>意味</td>
+                    <td>同じ意味の書き方</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>+=</td>
+                    <td>加算して代入</td>
+                    <td>a = a + b;</td>
+                </tr>
+                <tr>
+                    <td>-=</td>
+                    <td>減算して代入</td>
+                    <td>a = a - b;</td>
+                </tr>
+                <tr>
+                    <td>*=</td>
+                    <td>乗算して代入</td>
+                    <td>a = a * b;</td>
+                </tr>
+                <tr>
+                    <td>/=</td>
+                    <td>除算して代入</td>
+                    <td>a = a / b;</td>
+                </tr>
+                <tr>
+                    <td>%=</td>
+                    <td>剰余を代入</td>
+                    <td>a = a % b;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>ここで、Code1_1を複合代入演算子で書き換えてみる。</p>
+        <details>
+            <summary>ソースコードを見る (Code1_5)</summary>
+            <pre><code>
+int score;
+
+score = 0;          //ゲーム開始時は0点
+
+score += 10;        //コインを取った！ (score = score + 10 と同じ)
+score += 30;
+
+Console.WriteLine(score);   //40
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Code1_5)</summary>
+            <pre><code>
+40
+            </code></pre>
+        </details>
+
+        <h1>インクリメント・デクリメント</h1>
+        <p>
+            値を1だけ増やす操作を「<strong>インクリメント</strong>」、1だけ減らす操作を「<strong>デクリメント</strong>」と呼ぶ。
+            これらは専用の演算子で簡単に書ける。
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <td>演算子</td>
+                    <td>名前</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>++</td>
+                    <td>インクリメント</td>
+                </tr>
+                <tr>
+                    <td>--</td>
+                    <td>デクリメント</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>実際に、上記の演算子を使ってみよう。</p>
+        <details>
+            <summary>ソースコードを見る (Code1_6)</summary>
+            <pre><code>
+int count = 5;
+
+count++;                    //6になる
+Console.WriteLine(count);
+
+count--;                    //5に戻る
+Console.WriteLine(count);
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Code1_6)</summary>
+            <pre><code>
+6
+5
+            </code></pre>
+        </details>
+
+        <h2>前置と後置による処理の違い</h2>
+        <p>
+            <code>++</code>と<code>--</code>は、変数の前に付ける「<strong>前置</strong>」（<code>++a</code>）と、後ろに付ける「<strong>後置</strong>」（<code>a++</code>）の2種類の書き方がある。
+            単独で使う場合はどちらも結果は同じだが、他の式の中で使う場合は値の扱われ方が異なる。
+        </p>
+        <p>違いは以下の通り。</p>
+        <ul>
+            <li>前置 : 先に値を1増やし、増えた後の値が式の結果になる</li>
+            <li>後置 : 先に現在の値が式の結果になり、その後で値が1増える</li>
+        </ul>
+        <p>実際に、前置と後置による処理の違いを確認しよう。</p>
+        <details>
+            <summary>ソースコードを見る (Code1_7)</summary>
+            <pre><code>
+int a = 5;
+int b = a++;    //bに5が代入され、その後aが6になる
+Console.WriteLine(a);
+Console.WriteLine(b);
+
+int c = ++a;    //aが7になり、その7がcに代入される
+Console.WriteLine(a);
+Console.WriteLine(c);
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Code1_7)</summary>
+            <pre><code>
+6
+5
+7
+7
+            </code></pre>
+        </details>
     </div>
 </body>
