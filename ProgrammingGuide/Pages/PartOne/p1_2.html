@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="/ProgrammingGuide/guide.css">
 </head>
 
-<header>
-    <a class="logo" href="/ProgrammingGuide/home.html">Programming Guide</a>
-</header>
-
 <body>
+    <header>
+        <a class="logo" href="/ProgrammingGuide/home.html">Programming Guide</a>
+    </header>
+
     <div class="page-content">
         <h1>変数とは</h1>
         <p>
@@ -29,7 +29,7 @@
         </div>
         <p>さて、上記の例を実際にコードにして入力しよう。</p>
         <details>
-            <summary>ソースコードを見る (Code1_1)</summary>
+            <summary>ソースコードを見る (Sec2_1)</summary>
             <pre><code>
 //変数の宣言 データを記憶しておくための領域（箱）に名前をつける
 int score;          //得点を保持
@@ -49,7 +49,7 @@ Console.WriteLine(score); //得点を表示する
         </details>
         <p>実行すると、画面に変数の値が表示される。実行結果は以下の通り。</p>
         <details>
-            <summary>実行結果 (Code1_1)</summary>
+            <summary>実行結果 (Sec2_1)</summary>
             <pre><code>
 40
             </code></pre>
@@ -128,7 +128,7 @@ Console.WriteLine(score); //得点を表示する
         <h1>変数を使う</h1>
         <h2>変数の宣言と代入</h2>
         <p>
-            Code1_1の2行目、<code>int score;</code>はscoreという名前のint型の変数を作っている。
+            Sec2_1の2行目、<code>int score;</code>はscoreという名前のint型の変数を作っている。
             変数の作成を「<strong>変数の宣言</strong>」と呼ぶ。<br>
             5行目では、<code>score = 0;</code>と書くことで、変数scoreに整数0を入れている。
             変数に値を入れることを「<strong>代入</strong>」と呼ぶ。<br>
@@ -227,7 +227,7 @@ virtual   void      volatile    while      case
 
         <p>実際に、上記の演算子を使ってみよう。</p>
         <details>
-            <summary>ソースコードを見る (Code1_2)</summary>
+            <summary>ソースコードを見る (Sec2_2)</summary>
             <pre><code>
 int a = 11;
 int b = 3;
@@ -244,7 +244,7 @@ Console.WriteLine(sum);
             </code></pre>
         </details>
         <details>
-            <summary>実行結果 (Code1_2)</summary>
+            <summary>実行結果 (Sec2_2)</summary>
             <pre><code>
 14
 8
@@ -263,7 +263,7 @@ Console.WriteLine(sum);
 
         <p>実際に、型による除算結果の違いを確認しよう。</p>
         <details>
-            <summary>ソースコードを見る (Code1_3)</summary>
+            <summary>ソースコードを見る (Sec2_3)</summary>
             <pre><code>
 Console.WriteLine(7 / 3);        //整数同士
 Console.WriteLine(7.0f / 3);     //小数が含まれる
@@ -272,7 +272,7 @@ Console.WriteLine(7 / 3.0f);     //どちらか一方でもよい
         </details>
 
         <details>
-            <summary>実行結果 (Code1_3)</summary>
+            <summary>実行結果 (Sec2_3)</summary>
             <pre><code>
 2
 2.3333333
@@ -293,14 +293,14 @@ Console.WriteLine(7 / 3.0f);     //どちらか一方でもよい
 
         <p>実際に、演算の優先順位を確認しよう。</p>
         <details>
-            <summary>ソースコードを見る (Code1_4)</summary>
+            <summary>ソースコードを見る (Sec2_4)</summary>
             <pre><code>
 Console.WriteLine(2 + 3 * 4);    //乗算 -> 加算
 Console.WriteLine((2 + 3) * 4);  //括弧内の加算 -> 乗算
             </code></pre>
         </details>
         <details>
-            <summary>実行結果 (Code1_4)</summary>
+            <summary>実行結果 (Sec2_4)</summary>
             <pre><code>
 14
 20
@@ -309,7 +309,7 @@ Console.WriteLine((2 + 3) * 4);  //括弧内の加算 -> 乗算
 
         <h1>複合代入演算</h1>
         <p>
-            Code1_1では、得点を加算するために<code>score = score + 10;</code>と書いた。
+            Sec2_1では、得点を加算するために<code>score = score + 10;</code>と書いた。
             このように「変数を使って計算し、その結果を同じ変数に代入する」処理はよく使われるため、簡潔に書くための演算子が用意されている。これを「<strong>複合代入演算子</strong>」と呼ぶ。
         </p>
         <table>
@@ -348,9 +348,9 @@ Console.WriteLine((2 + 3) * 4);  //括弧内の加算 -> 乗算
                 </tr>
             </tbody>
         </table>
-        <p>ここで、Code1_1を複合代入演算子で書き換えてみる。</p>
+        <p>ここで、Sec2_1を複合代入演算子で書き換えてみる。</p>
         <details>
-            <summary>ソースコードを見る (Code1_5)</summary>
+            <summary>ソースコードを見る (Sec2_5)</summary>
             <pre><code>
 int score;
 
@@ -363,7 +363,7 @@ Console.WriteLine(score);   //40
             </code></pre>
         </details>
         <details>
-            <summary>実行結果 (Code1_5)</summary>
+            <summary>実行結果 (Sec2_5)</summary>
             <pre><code>
 40
             </code></pre>
@@ -395,7 +395,7 @@ Console.WriteLine(score);   //40
 
         <p>実際に、上記の演算子を使ってみよう。</p>
         <details>
-            <summary>ソースコードを見る (Code1_6)</summary>
+            <summary>ソースコードを見る (Sec2_6)</summary>
             <pre><code>
 int count = 5;
 
@@ -407,7 +407,7 @@ Console.WriteLine(count);
             </code></pre>
         </details>
         <details>
-            <summary>実行結果 (Code1_6)</summary>
+            <summary>実行結果 (Sec2_6)</summary>
             <pre><code>
 6
 5
@@ -426,7 +426,7 @@ Console.WriteLine(count);
         </ul>
         <p>実際に、前置と後置による処理の違いを確認しよう。</p>
         <details>
-            <summary>ソースコードを見る (Code1_7)</summary>
+            <summary>ソースコードを見る (Sec2_7)</summary>
             <pre><code>
 int a = 5;
 int b = a++;    //bに5が代入され、その後aが6になる
@@ -439,7 +439,7 @@ Console.WriteLine(c);
             </code></pre>
         </details>
         <details>
-            <summary>実行結果 (Code1_7)</summary>
+            <summary>実行結果 (Sec2_7)</summary>
             <pre><code>
 6
 5
@@ -449,3 +449,4 @@ Console.WriteLine(c);
         </details>
     </div>
 </body>
+</html>
