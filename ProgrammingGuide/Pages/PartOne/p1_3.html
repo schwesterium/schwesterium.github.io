@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>条件分岐と繰り返し</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/ProgrammingGuide/guide.css">
+</head>
+
+<body>
+    <header>
+    <a class="logo" href="/ProgrammingGuide/home.html">Programming Guide</a>
+    </header>
+
+    <div class="page-content">
+        <h1>条件分岐とは</h1>
+        <p>指定した条件が満たされたどうかで、次に実行するプログラムを変えることである。</p>
+        <div class="example">
+            <p>
+                偶数の判定について、条件分岐を使用して考えてみる。<br>
+                整数が2で割り切れる場合は偶数と表示する
+            </p>
+        </div>
+        <h2>if文</h2>
+        <p>与えられた条件文が満たされている場合は、ifに続く{}の内の処理を実行する。</p>
+        <p>例を実際にコードにしてみよう。</p>
+        <details>
+            <summary>ソースコードを見る (Sec3_1)</summary>
+            <pre><code>
+int number = 5;
+
+//numberを2で割った余りが0なら偶数
+if (number % 2 == 0) //if(条件文)
+{
+    //真の場合の処理
+    Console.WriteLine("numberは偶数");
+}
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Sec3_1)</summary>
+            <pre><code>
+※numberは奇数であるため、実行しても何も表示されない。
+            </code></pre>
+        </details>
+        <h2>比較演算子</h2>
+        <p>Sec3_1で使われた<code>==</code>のように、左辺と右辺を比較して真偽を調べる演算子を指す。</p>
+        <p>C#の比較演算子は以下の通り。</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>演算子</th>
+                    <th>意味</th>
+                    <th>使用例</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>==</td>
+                    <td>左辺と右辺が等しいか</td>
+                    <td>a == b</td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>左辺と右辺が等しいか</td>
+                    <td>a != b</td>
+                </tr>
+                <tr>
+                    <td>></td>
+                    <td>左辺が右辺より大きいか</td>
+                    <td>a > b</td>
+                </tr>
+                <tr>
+                    <td>&lt;</td>
+                    <td>左辺が右辺より小さいか</td>
+                    <td>a &lt; b</td>
+                </tr>
+                <tr>
+                    <td>>=</td>
+                    <td>左辺は右辺以上か</td>
+                    <td>a >= b</td>
+                </tr>
+                <tr>
+                    <td>&lt;=</td>
+                    <td>左辺は右辺以下か</td>
+                    <td>a &lt;= b</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>else, else if</h2>
+        <p>ifの条件が成り立たないときの処理は<code>else</code>を使うことで行える。また、条件が3つ以上に分かれるときは<code>else if</code>を使う。</p>
+        <p>Sec3_1に加えて、奇数だった時の表示をしてみよう。</p>
+        <details>
+            <summary>ソースコードを見る (Sec3_2)</summary>
+            <pre><code>
+int number = 5;
+
+if (number % 2 == 0)
+{
+    Console.WriteLine("numberは偶数");
+}
+else
+{
+    //偽の場合、今回は奇数の場合
+    Console.WriteLine("numberは奇数");
+}
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Sec3_2)</summary>
+            <pre><code>
+numberは奇数
+            </code></pre>
+        </details>
+    </div>
+</body>
+</html>
