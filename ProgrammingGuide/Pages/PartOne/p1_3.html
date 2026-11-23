@@ -63,7 +63,7 @@ if (number % 2 == 0) //if(条件文)
                 </tr>
                 <tr>
                     <td>!=</td>
-                    <td>左辺と右辺が等しいか</td>
+                    <td>左辺と右辺が等しくないか</td>
                     <td>a != b</td>
                 </tr>
                 <tr>
@@ -90,7 +90,7 @@ if (number % 2 == 0) //if(条件文)
         </table>
         <h2>else, else if</h2>
         <p>ifの条件が成り立たないときの処理は<code>else</code>を使うことで行える。また、条件が3つ以上に分かれるときは<code>else if</code>を使う。</p>
-        <p>Sec3_1に加えて、奇数だった時の表示をしてみよう。</p>
+        <p>Sec3_1に加えて、<code>else</code>を使い奇数だった時の表示をしてみよう。</p>
         <details>
             <summary>ソースコードを見る (Sec3_2)</summary>
             <pre><code>
@@ -111,6 +111,285 @@ else
             <summary>実行結果 (Sec3_2)</summary>
             <pre><code>
 numberは奇数
+            </code></pre>
+        </details>
+        <p>点数に応じて、80点以上なら「優」79~50点を「可」それ以外は「不可」と成績を出すプログラムを書いてみよう。</p>
+        <details>
+            <summary>ソースコードを見る (Sec3_3)</summary>
+            <pre><code>
+int score = 75;
+
+if (score >= 80)
+{
+    Console.WriteLine("優");
+}
+else if (score >= 50)
+{
+    Console.WriteLine("可");
+}
+else
+{
+    Console.WriteLine("不可");
+}
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Sec3_3)</summary>
+            <pre><code>
+可
+            </code></pre>
+            <div class="alerts-note">
+                <p>条件は上から順に調べられ、最初に成り立ったものだけが実行される。上の例の場合、最初の条件は偽、次の条件が真なので「可」と表示され、残りは調べられない。</p>
+            </div>
+        </details>
+        <div class="alerts-note">
+            <p>条件が3種類以上あるときの書き方</p>
+            <p>
+                条件が増えるにつれ、<code>if, else if, else if, ... , else</code>と、<code>else if</code>の書く量が増えていく。<br>
+                その場合、「<strong>switch文</strong>」が使われることもあり、より簡潔に書くことができるようになる。<br>
+                とはいえケースバイケースであるため、まずはif文を使えるようになり、そのうえで使い方調べるとよい。
+            </p>
+        </div>
+        <h2>条件を組み合わせる</h2>
+        <p>条件式は複数の条件を組み合わせることができ、これを行うには「<strong>論理演算子</strong>」を使う</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>演算子</th>
+                    <th>意味</th>
+                    <th>呼び方</th>
+                    <th>使用例</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>&</td>
+                    <td>左辺かつ右辺が真なら真になる</td>
+                    <td>AND、論理積</td>
+                    <td>A & B</td>
+                </tr>
+                <tr>
+                    <td>|</td>
+                    <td>左辺または右辺が真なら真になる</td>
+                    <td>OR、論理和</td>
+                    <td>A | B</td>
+                </tr>
+                <tr>
+                    <td>^</td>
+                    <td>左辺または右辺が真のときのみ真になる</td>
+                    <td>XOR、排他的論理和</td>
+                    <td>A ^ B</td>
+                </tr>
+                <tr>
+                    <td>!</td>
+                    <td>その条件式の否定を行う。trueならfalse、falseならtrue</td>
+                    <td>NOT、論理否定</td>
+                    <td>!(A & B)</td>
+                </tr>
+                <tr>
+                    <td>&&</td>
+                    <td>短絡評価を行うAND</td>
+                    <td>条件付き論理AND演算子</td>
+                    <td>A && B</td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td>短絡評価を行うOR</td>
+                    <td>条件付き論理OR演算子</td>
+                    <td>A || B</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="alerts-note">
+            <p>「<strong>短絡評価</strong>」とは</p>
+            <p>
+                左辺の結果だけで条件式全体の値が確定した時に、右辺の評価を省略する仕組みである。<br>
+                <code>&&</code>は左辺が偽なら、その時点で条件式が偽であることが確定しているため、右辺は評価されない。<br>
+                <code>||</code>は左辺が真なら、その時点で条件式が真であることが確定しているため、右辺は評価されない。<br>
+            </p>
+        </div>
+        <p>18歳以上かつ入場チケットを持っている人が入場できる ("入場できます"と表示する) プログラムを書いてみよう。</p>
+        <details>
+            <summary>ソースコードを見る (Sec3_4)</summary>
+            <pre><code>
+int age = 18;
+bool hasTicket = true;
+
+if(age >= 18 && hasTicket)
+{
+    Console.WriteLine("入場できます");
+}
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Sec3_4)</summary>
+            <pre><code>
+入場できます
+            </code></pre>
+        </details>
+
+        <h1>繰り返しとは</h1>
+        <p>同じ処理を、指定した回数または条件が満たされている間、繰り返し実行することである。</p>
+        <div class="example">
+            <p>
+                1から5までの整数を順番に表示することを考えてみる。<br>
+                <code>Console.WriteLine</code>を5回書くこともできるが、10000回なら現実的ではない。<br>
+                このような場合、繰り返しを使えば、短いコードで同じ処理を何度でも実行できる。
+            </p>
+        </div>
+        <h2>for文</h2>
+        <p>指定した回数だけ同じ処理を行う。構文は以下の通り</p>
+        <pre><code>
+for (初期化; 条件文; 更新)
+{
+    //繰り返したい処理
+}
+        </code></pre>
+        <table>
+            <thead>
+                <tr>
+                    <th>部分</th>
+                    <th>意味</th>
+                    <th>実行されるタイミング</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>初期化</td>
+                    <td>カウンタ変数の用意</td>
+                    <td>繰り返しの開始時のみ</td>
+                </tr>
+                <tr>
+                    <td>条件文</td>
+                    <td>繰り返しを続けるかどうかの判定</td>
+                    <td>処理の実行前に毎回</td>
+                </tr>
+                <tr>
+                    <td>更新</td>
+                    <td>カウンタ変数の値を増減させる</td>
+                    <td>処理の実行後に毎回</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>1から10までの合計を求めるプログラムを書いてみよう。</p>
+        <details>
+            <summary>ソースコードを見る (Sec3_5)</summary>
+            <pre><code>
+int sum = 0;
+
+for (int i = 1; i &lt;= 10; i++)
+{
+    sum += i;
+}
+
+Console.WriteLine("合計: " + sum); //文字列の結合
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Sec3_5)</summary>
+            <pre><code>
+合計: 55
+            </code></pre>
+        </details>
+        <h2>break, continue</h2>
+        <p>繰り返しの途中で、処理の流れを変えることができる。</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>キーワード</th>
+                    <th>意味</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>break</td>
+                    <td>現在のループを即座に終了する</td>
+                </tr>
+                <tr>
+                    <td>continue</td>
+                    <td>今回のループの残りの処理を飛ばし、次のループへ進む</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><code>break</code>を使い、iが5になったら繰り返しを終了するプログラムを書いてみよう。</p>
+        <details>
+            <summary>ソースコードを見る (Sec3_6)</summary>
+            <pre><code>
+for (int i = 0; i &lt; 10; i++)
+{
+    if (i == 5)
+    {
+        //iが5になった時点でforを抜ける
+        Console.Writeline("ループ終了！");
+        break;
+    }
+    Console.WriteLine(i);
+}
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Sec3_6)</summary>
+            <pre><code>
+0
+1
+2
+3
+4
+ループ終了！
+            </code></pre>
+        </details>
+        <p><code>continue</code>を使い、1から10までの整数のうち奇数だけを表示するプログラムを書いてみよう。</p>
+        <details>
+            <summary>ソースコードを見る (Sec3_8)</summary>
+            <pre><code>
+for (int i = 1; i &lt;= 10; i++)
+{
+    if (i % 2 == 0)
+    {
+        continue; //偶数なら以降の処理を飛ばして次の繰り返しへ
+    }
+    Console.WriteLine(i);
+}
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Sec3_8)</summary>
+            <pre><code>
+1
+3
+5
+7
+9
+            </code></pre>
+        </details>
+        <h2>while文</h2>
+        <p>条件文が真である間、処理を繰り返す構文である。</p>
+        <pre><code>
+while (条件文)
+{
+    //繰り返したい処理
+}
+        </code></pre>
+        <p>1から始めて、2倍にし続けて100以上になるまでの回数を調べるプログラムを書いてみよう。</p>
+        <details>
+            <summary>ソースコードを見る (Sec3_8)</summary>
+            <pre><code>
+int number = 1;
+int count = 0;
+
+while (number &lt; 100) //100未満の間は処理を続ける
+{
+    number *= 2;
+    count++;
+}
+
+Console.WriteLine(count + "回で" + number + "になった");
+            </code></pre>
+        </details>
+        <details>
+            <summary>実行結果 (Sec3_8)</summary>
+            <pre><code>
+7回で128になった
             </code></pre>
         </details>
     </div>
